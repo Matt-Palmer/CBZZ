@@ -431,4 +431,32 @@ function confirmQuery($query){
     }
 }
 
+
+function insertGalleryImages(){
+
+    if(isset($_POST['submit-images'])){
+
+        global $connection;
+
+        $imageOne = $_FILES['image-one']['name'];
+        $imageOne_temp = $_FILES['image-one']['tmp_name'];
+
+        $imageTwo = $_FILES['image-two']['name'];
+        $imageTwo_temp = $_FILES['image-two']['tmp_name'];
+
+        $imageThree = $_FILES['image-three']['name'];
+        $imageThree_temp = $_FILES['image-three']['tmp_name'];
+
+        $imageFour = $_FILES['image-four']['name'];
+        $imageFour_temp = $_FILES['image-four']['tmp_name'];
+
+        $query = "INSERT INTO gallery(image_one, image_two, image_three, image_four) ";
+        $query .= "VALUES('{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}')";
+
+        $insert_image_query = mysqli_query($connection, $query);
+    }
+
+
+}
+
 ?>

@@ -59,3 +59,7 @@
   .alt-btn:hover {
     background-color: lightgrey;
     color: #337ab7; }
+
+.gallery_image {
+  width: 100px;
+  background-color: blue; }

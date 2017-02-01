@@ -2,15 +2,31 @@
 #publish-options-outer-container,
 #category-options-container,
 #category-options-outer-container,
-#bulk-options-container{
-    padding-left: 0;
-}
+#bulk-options-container {
+  padding-left: 0; }
 
-.gallery_image{
-    width: 100px;
-    margin: auto;
-}
+.gallery_image {
+  width: 100px;
+  margin: auto; }
 
-.img-container{
-    text-align: center;
-}
+.img-container {
+  text-align: center; }
+
+.image-container {
+  padding: 0;
+  height: 552px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden; }
+  .image-container .wide-image {
+    width: 55%;
+    height: 50%;
+    background-color: gray; }
+  .image-container .left-align {
+    float: left; }
+  .image-container .right-align {
+    float: right; }
+  .image-container .image {
+    width: 45%;
+    height: 50%;
+    background-color: lightgray; }
