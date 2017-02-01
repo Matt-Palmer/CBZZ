@@ -48,7 +48,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#gallery_dropdown"><i class="fa fa-fw fa-picture-o"></i> Gallery <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="gallery_dropdown" class="collapse">
                             <li>
-                                <a href="gallery.php">View All Images</a>
+                                <a href="gallery.php?source=view_all">View All Images</a>
                             </li>
                             <li>
                                 <a href="gallery.php?source=add_image">Add Image</a>

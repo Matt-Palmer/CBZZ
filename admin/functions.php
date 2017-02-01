@@ -438,6 +438,10 @@ function insertGalleryImages(){
 
         global $connection;
 
+        if(isset($_GET['template-style'])){
+            $template_id = $_GET['template-style'];
+        }
+
         $imageOne = $_FILES['image-one']['name'];
         $imageOne_temp = $_FILES['image-one']['tmp_name'];
 
@@ -450,8 +454,13 @@ function insertGalleryImages(){
         $imageFour = $_FILES['image-four']['name'];
         $imageFour_temp = $_FILES['image-four']['tmp_name'];
 
-        $query = "INSERT INTO gallery(image_one, image_two, image_three, image_four) ";
-        $query .= "VALUES('{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}')";
+        move_uploaded_file($imageOne_temp, "../images/$imageOne");
+        move_uploaded_file($imageTwo_temp, "../images/$imageTwo");
+        move_uploaded_file($imageThree_temp, "../images/$imageThree");
+        move_uploaded_file($imageFour_temp, "../images/$imageFour");
+
+        $query = "INSERT INTO gallery(template_id, image_one, image_two, image_three, image_four) ";
+        $query .= "VALUES('$template_id','{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}')";
 
         $insert_image_query = mysqli_query($connection, $query);
     }

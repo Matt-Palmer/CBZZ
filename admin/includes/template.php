@@ -17,7 +17,7 @@
                             switch($template_style){
 
                                 case '1':
-                                include 'includes/add_post.php';
+                                include 'templates/template_one.php';
                                 break;
 
                                 case 'edit_post':

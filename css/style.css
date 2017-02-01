@@ -63,3 +63,22 @@
 .gallery_image {
   width: 100px;
   background-color: blue; }
+
+.image-container {
+  padding: 0;
+  height: 552px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden; }
+  .image-container .wide-image {
+    width: 55%;
+    height: 50%;
+    background-color: gray; }
+  .image-container .left-align {
+    float: left; }
+  .image-container .right-align {
+    float: right; }
+  .image-container .image {
+    width: 45%;
+    height: 50%;
+    background-color: lightgray; }
