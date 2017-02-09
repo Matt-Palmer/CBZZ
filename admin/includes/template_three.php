@@ -40,7 +40,37 @@
                                 <input type="file" class="form-control" name="image-four">
                             </div>
                         </div>
-                        <?php insertGalleryImagesForTemplateOne()?>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="image">Image Five</label><br>
+                                <input type="file" class="form-control" name="image-five">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="image">Image Six</label><br>
+                                <input type="file" class="form-control" name="image-six">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="image">Image Seven</label><br>
+                                <input type="file" class="form-control" name="image-seven">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="image">Image Eight</label><br>
+                                <input type="file" class="form-control" name="image-eight">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="image">Image Nine</label><br>
+                                <input type="file" class="form-control" name="image-nine">
+                            </div>
+                        </div>
+                        <?php insertGalleryImagesForTemplateThree()?>
                         
                     </div>
                     <div class="row">
@@ -52,17 +82,32 @@
                 
                 <div class="row">
                     <div class="col-lg-4 col-md-offset-4 image-container">
-                        <div class="wide-image left-align">
+                        <div class="third left-align">
                             Image One
                         </div>
-                        <div class="image right-align">
+                        <div class="third left-align">
                             Image Two
                         </div>
-                        <div class="image left-align">
+                        <div class="third left-align">
                             Image Three
                         </div>
-                        <div class="wide-image right-align">
+                        <div class="third left-align">
                             Image Four
+                        </div>
+                        <div class="third left-align">
+                            Image Five
+                        </div>
+                        <div class="third left-align">
+                            Image Six
+                        </div>
+                        <div class="third left-align">
+                            Image Seven
+                        </div>
+                        <div class="third left-align">
+                            Image Eight
+                        </div>
+                        <div class="third left-align">
+                            Image Nine
                         </div>
                     </div>
                 </div>

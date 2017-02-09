@@ -21,7 +21,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="posts.php">Posts</a></li>
-                            <li><a href="#">Link 2</a></li>
+                            <li><a href="gallery.php">Gallery</a></li>
                             <li><a href="#">Link 3</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Link 4 <span class="caret"></span>

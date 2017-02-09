@@ -14,7 +14,7 @@
 
 .image-container {
   padding: 0;
-  height: 552px;
+  height: 300px;
   border: 2px solid black;
   position: relative;
   overflow: hidden; }
@@ -27,6 +27,21 @@
   .image-container .right-align {
     float: right; }
   .image-container .image {
-    width: 45%;
-    height: 50%;
-    background-color: lightgray; }
+    width: 50%;
+    height: 50%; }
+    .image-container .image:nth-child(1), .image-container .image:nth-child(4) {
+      background-color: gray; }
+    .image-container .image:nth-child(2), .image-container .image:nth-child(3) {
+      background-color: lightgray; }
+  .image-container .third {
+    width: 33.3%;
+    height: 33.3%; }
+    .image-container .third:nth-child(odd) {
+      background-color: gray; }
+    .image-container .third:nth-child(even) {
+      background-color: lightgray; }
+
+#template-choices .image-container {
+  height: 200px; }
+#template-choices .img-placeholder {
+  background-color: gray; }

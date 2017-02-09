@@ -17,7 +17,7 @@
 
 .image-container{
     padding: 0;
-    height: 552px;
+    height: 300px;
     border: 2px solid black;
     position: relative;
     overflow: hidden;
@@ -37,9 +37,41 @@
     }
 
     .image{
-        width: 45%;
+        width: 50%;
         height: 50%;
-        background-color: lightgray;
+        
+        &:nth-child(1),
+        &:nth-child(4){
+            background-color: gray;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3){
+            background-color: lightgray;
+        }
+    }
+
+    .third{
+        width: 33.3%;
+        height: 33.3%;
+        
+        &:nth-child(odd){
+            background-color: gray;
+        }
+
+        &:nth-child(even){
+            background-color: lightgray;
+        }
     }
     
+}
+
+#template-choices{
+    .image-container{
+        height: 200px;
+    }
+
+    .img-placeholder{
+        background-color: gray;
+    }
 }

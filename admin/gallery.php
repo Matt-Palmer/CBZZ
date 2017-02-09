@@ -56,12 +56,12 @@
                                 include 'includes/template_one.php';
                                 break;
 
-                                case 'edit_post':
-                                include 'includes/edit_post.php';
+                                case '2':
+                                include 'includes/template_two.php';
                                 break;
 
-                                case '23':
-                                echo '';
+                                case '3':
+                                include 'includes/template_three.php';
                                 break;
 
                                 case '98':

@@ -17,12 +17,18 @@ function displayTemplate($image_id, $template_id){
     $image_two = $row['image_two'];
     $image_three = $row['image_three'];
     $image_four = $row['image_four'];
-
+    $image_five = $row['image_five'];
+    $image_six = $row['image_six'];
+    $image_seven = $row['image_seven'];
+    $image_eight = $row['image_eight'];
+    $image_nine = $row['image_nine'];
+    
+    
     switch($template_id){
         case '1':
-            echo '<div class="row">';
-            echo '<div class="col-lg-4 col-md-offset-4 image-container">';
-            echo '<div class="wide-image left-align">';
+            echo '<div class="col-md-4 image-container">';
+            echo '<div class="inner-container">';
+            echo '<div class="image left-align">';
             echo "<img src='images/$image_one'>";
             echo '</div>';
             echo '<div class="image right-align">';
@@ -31,13 +37,56 @@ function displayTemplate($image_id, $template_id){
             echo '<div class="image left-align">';
             echo "<img src='images/$image_three'>";
             echo '</div>';
-            echo '<div class="wide-image right-align">';
+            echo '<div class="image right-align">';
             echo "<img src='images/$image_four'>";
             echo '</div>';
             echo '</div>';
             echo '</div>';
             break;
+
+        case '2':
+            echo '<div class="col-lg-4 image-container">';
+            echo '<div class="inner-container">';
+            echo "<img src='images/$image_one'>";
+            echo '</div>';
+            echo '</div>';
+            break;
+        
+        case '3':
+            echo '<div class="col-md-4 image-container">';
+            echo '<div class="inner-container">';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_one'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_two'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_three'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_four'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_five'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_six'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_seven'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_eight'>";
+            echo '</div>';
+            echo '<div class="third left-align">';
+            echo "<img src='images/$image_nine'>";
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            break;
     }
+    
 
 }
 

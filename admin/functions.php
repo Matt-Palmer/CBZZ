@@ -432,7 +432,7 @@ function confirmQuery($query){
 }
 
 
-function insertGalleryImages(){
+function insertGalleryImagesForTemplateOne(){
 
     if(isset($_POST['submit-images'])){
 
@@ -441,7 +441,7 @@ function insertGalleryImages(){
         if(isset($_GET['template-style'])){
             $template_id = $_GET['template-style'];
         }
-
+        
         $imageOne = $_FILES['image-one']['name'];
         $imageOne_temp = $_FILES['image-one']['tmp_name'];
 
@@ -461,6 +461,86 @@ function insertGalleryImages(){
 
         $query = "INSERT INTO gallery(template_id, image_one, image_two, image_three, image_four) ";
         $query .= "VALUES('$template_id','{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}')";
+
+        $insert_image_query = mysqli_query($connection, $query);
+    }
+
+
+}
+
+function insertGalleryImagesForTemplateTwo(){
+
+    if(isset($_POST['submit-images'])){
+
+        global $connection;
+
+        if(isset($_GET['template-style'])){
+            $template_id = $_GET['template-style'];
+        }
+        
+        $imageOne = $_FILES['image-one']['name'];
+        $imageOne_temp = $_FILES['image-one']['tmp_name'];
+
+        move_uploaded_file($imageOne_temp, "../images/$imageOne");
+
+        $query = "INSERT INTO gallery(template_id, image_one) ";
+        $query .= "VALUES('$template_id','{$imageOne}')";
+
+        $insert_image_query = mysqli_query($connection, $query);
+    }
+
+
+}
+
+function insertGalleryImagesForTemplateThree(){
+
+    if(isset($_POST['submit-images'])){
+
+        global $connection;
+
+        if(isset($_GET['template-style'])){
+            $template_id = $_GET['template-style'];
+        }
+        
+        $imageOne = $_FILES['image-one']['name'];
+        $imageOne_temp = $_FILES['image-one']['tmp_name'];
+
+        $imageTwo = $_FILES['image-two']['name'];
+        $imageTwo_temp = $_FILES['image-two']['tmp_name'];
+
+        $imageThree = $_FILES['image-three']['name'];
+        $imageThree_temp = $_FILES['image-three']['tmp_name'];
+
+        $imageFour = $_FILES['image-four']['name'];
+        $imageFour_temp = $_FILES['image-four']['tmp_name'];
+
+        $imageFive = $_FILES['image-five']['name'];
+        $imageFive_temp = $_FILES['image-five']['tmp_name'];
+
+        $imageSix = $_FILES['image-six']['name'];
+        $imageSix_temp = $_FILES['image-six']['tmp_name'];
+
+        $imageSeven = $_FILES['image-seven']['name'];
+        $imageSeven_temp = $_FILES['image-seven']['tmp_name'];
+
+        $imageEight = $_FILES['image-eight']['name'];
+        $imageEight_temp = $_FILES['image-eight']['tmp_name'];
+
+        $imageNine = $_FILES['image-nine']['name'];
+        $imageNine_temp = $_FILES['image-nine']['tmp_name'];
+
+        move_uploaded_file($imageOne_temp, "../images/$imageOne");
+        move_uploaded_file($imageTwo_temp, "../images/$imageTwo");
+        move_uploaded_file($imageThree_temp, "../images/$imageThree");
+        move_uploaded_file($imageFour_temp, "../images/$imageFour");
+        move_uploaded_file($imageFive_temp, "../images/$imageFive");
+        move_uploaded_file($imageSix_temp, "../images/$imageSix");
+        move_uploaded_file($imageSeven_temp, "../images/$imageSeven");
+        move_uploaded_file($imageEight_temp, "../images/$imageEight");
+        move_uploaded_file($imageNine_temp, "../images/$imageNine");
+
+        $query = "INSERT INTO gallery(template_id, image_one, image_two, image_three, image_four, image_five, image_six, image_seven, image_eight, image_nine) ";
+        $query .= "VALUES('$template_id','{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}','{$imageFive}', '{$imageSix}', '{$imageSeven}', '{$imageEight}', '{$imageNine}')";
 
         $insert_image_query = mysqli_query($connection, $query);
     }
