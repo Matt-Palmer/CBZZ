@@ -4,39 +4,34 @@
 <html>
     <head>
         <title>Cakes By Zo Zo</title>
-
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="content-width">
-                    <div class="navbar-header">
-                        <a href="index.php" class="navbar-brand">
-                            Logo
-                        </a>
-                    </div>
 
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="posts.php">Posts</a></li>
-                            <li><a href="gallery.php">Gallery</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Link 4 <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Link 4.1</a></li>
-                                    <li><a href="#">Link 4.2</a></li>
-                                    <li><a href="#">Link 4.3</a></li>
-                                </ul>
+    <body>
+        <div class="container-fluid">
+            
+            <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                <div class="container">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Navbar</a>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="posts.php">Posts <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.php">Gallery</a>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="admin/">Admin</a></li>
-                        </ul>
                     </div>
+                    
                 </div>
-            </div>
-        </nav>
+                
+            </nav>
+        
+        </div>

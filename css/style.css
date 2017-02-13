@@ -2,9 +2,14 @@
   box-sizing: border-box; }
 
 .navbar {
-  border-radius: 0; }
+  border-radius: 0;
+  margin-bottom: 32px; }
 
-.content-width {
+.container-fluid {
+  padding: 0; }
+
+.content-width,
+.container {
   width: 70%;
   margin: 0 auto; }
 
@@ -14,42 +19,50 @@
   padding: 80px 0px;
   background-color: #eee; }
 
-#search-bar {
-  margin-right: 0;
-  margin-bottom: 20px; }
-
-.form-inline {
-  margin-left: 15px;
-  margin-right: 15px; }
-
 #tags {
   width: 196px; }
 
-#search,
+#view-gallery,
 #view-all-posts {
-  margin-right: 15px; }
+  margin-bottom: 15px;
+  width: 100%; }
 
 .display-inline {
   display: inline; }
 
-#filters #search {
-  margin-top: 25px; }
+#form-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 32px; }
+  #form-container h6 {
+    display: block;
+    width: 100%;
+    margin-top: 17px; }
+  #form-container .form-inline {
+    width: 100%; }
+    #form-container .form-inline #reset {
+      width: 100%;
+      color: #0275d8; }
+    #form-container .form-inline #apply-filter,
+    #form-container .form-inline #re-apply-filter {
+      width: 100%;
+      margin: 10px 0; }
+    #form-container .form-inline #search {
+      margin-bottom: 10px;
+      padding-right: 0;
+      padding-left: 0; }
 
-.filters {
-  width: 196px; }
+#recent-images-heading {
+  margin-top: 15px; }
 
-#filter-btn {
-  margin-top: 39px; }
-
-.filter-container {
-  padding: 15px 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 30px;
-  border-radius: 4px;
-  background-color: #eee; }
-
-.thumbnail img {
+.card-deck .card {
+  margin-bottom: 20px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px; }
+  .card-deck .card .read-more {
+    width: 100%; }
+.card-deck img {
   width: 100%; }
 
 .alt-btn {
@@ -68,34 +81,68 @@
   margin-left: 0;
   margin-right: 0; }
 
-.image-container {
-  padding: 15px; }
-  .image-container .inner-container {
-    padding: 5px;
-    height: 300px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden; }
-  .image-container .wide-image {
-    width: 55%;
-    height: 50%;
-    background-color: gray; }
-  .image-container .left-align {
-    float: left; }
-  .image-container .right-align {
-    float: right; }
-  .image-container .image {
-    width: 50%;
-    height: 50%;
-    background-color: lightgray; }
-  .image-container img {
-    width: 100%;
-    height: 100%; }
-  .image-container .third {
-    width: 33.3%;
-    height: 33.3%; }
-    .image-container .third:nth-child(odd) {
+.card {
+  margin-bottom: 5px; }
+  .card .image-container {
+    padding: 5px; }
+    .card .image-container .inner-container {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden; }
+    .card .image-container .wide-image {
+      width: 55%;
+      height: 50%;
       background-color: gray; }
-    .image-container .third:nth-child(even) {
+    .card .image-container .left-align {
+      float: left; }
+    .card .image-container .right-align {
+      float: right; }
+    .card .image-container .image {
+      width: 50%;
+      height: 50%;
       background-color: lightgray; }
+    .card .image-container img {
+      width: 100%;
+      height: 100%; }
+    .card .image-container .third {
+      width: 33.3%;
+      height: 33.3%; }
+      .card .image-container .third:nth-child(odd) {
+        background-color: gray; }
+      .card .image-container .third:nth-child(even) {
+        background-color: lightgray; }
+  .card .text-muted {
+    padding: 5px; }
+
+.card-columns {
+  column-count: 1; }
+
+@media only screen and (min-width: 768px) {
+  #form-container .form-inline #search {
+    margin-bottom: 0px;
+    padding-right: 5px; }
+
+  .card-columns {
+    column-count: 2; } }
+@media only screen and (min-width: 992px) {
+  #form-container .form-inline #apply-filter {
+    width: 25%; }
+  #form-container .form-inline #re-apply-filter,
+  #form-container .form-inline #reset {
+    width: 49.5%; }
+  #form-container .form-inline #reset {
+    margin-left: 5px; }
+
+  .card-columns {
+    column-count: 3; }
+
+  #view-gallery,
+  #view-all-posts {
+    margin-bottom: 15px;
+    width: 25%; } }
+@media only screen and (min-width: 1200px) {
+  #form-container .form-inline #apply-filter {
+    margin-left: 5px;
+    width: 32%; } }

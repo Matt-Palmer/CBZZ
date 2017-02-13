@@ -1,3 +1,8 @@
+.page-header{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
 #publish-options-container,
 #publish-options-outer-container,
 #category-options-container,
@@ -66,6 +71,36 @@
     
 }
 
+form{
+    overflow: scroll;
+
+    .table{
+        margin-top: 16px;
+    }
+
+    #apply-bulk{
+        width: 100%;
+    }
+
+    #add-post{
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .custom-file{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    #publish-post{
+        width: 100%;
+    }
+
+    #post-content{
+        width: 100%;
+    }
+}
+
 #template-choices{
     .image-container{
         height: 200px;
@@ -74,4 +109,131 @@
     .img-placeholder{
         background-color: gray;
     }
+}
+
+#user-info{
+    position: absolute;
+    right: 0;
+
+    .dropdown-menu{
+        position: absolute;
+        left: -110px;
+    }
+}
+
+.card{
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 5px;
+    .image-container{
+        padding: 5px;
+        
+        
+        .inner-container{
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+
+        .wide-image{
+            width: 55%;
+            height: 50%;
+            background-color: gray;
+        }
+
+        .left-align{
+            float: left;
+        }
+
+        .right-align{
+            float: right;
+        }
+
+        .image{
+            width: 50%;
+            height: 50%;
+            background-color: lightgray;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .third{
+            width: 33.3%;
+            height: 33.3%;
+            
+            &:nth-child(odd){
+                background-color: gray;
+            }
+
+            &:nth-child(even){
+                background-color: lightgray;
+            }
+        }
+
+        
+        
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    form{
+
+        #apply-bulk{
+            width: 49.7%;
+        }
+
+        #add-post{
+            margin-top: 0;
+            width: 49.7%;
+        }
+
+        .custom-file{
+            width: 50%;
+        }
+
+        .form-group{
+            width: 50%;
+        }
+
+        #publish-post{
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+   form{
+       #bulk-options-container{
+           width: 50%;
+       }
+
+        #apply-bulk{
+            width: 24.8%;
+        }
+
+        #add-post{
+            margin-top: 0;
+            width: 24.8%;
+        }
+
+        .custom-file{
+            width: 33%;
+        }
+
+        .form-group{
+            width: 33%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    
+
+    
 }

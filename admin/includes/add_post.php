@@ -49,9 +49,15 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label for="image">Post Image</label>
-        <input type="file" class="form-control" name="image">
+    <div id="file-upload" >
+        <div>
+            <label for="">Post Image</label>
+        </div>
+        
+        <label class="custom-file" for="image">
+            <input type="file" id="file" name="image" class="custom-file-input">
+            <span class="custom-file-control"></span>
+        </label>
     </div>
 
     <div class="form-group">
@@ -59,13 +65,13 @@
         <input type="text" class="form-control" name="tags">
     </div>
 
-    <div class="form-group">
+    <div id="post-content" class="form-group">
         <label for="content">Post Content</label>
         <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
     </div>
 
     <div class="form-group">
-        <input type="submit" class="btn btn-primary" name="create-post" value="Publish Post">
+        <input id="publish-post" type="submit" class="btn btn-primary" name="create-post" value="Publish Post">
     </div>
 
 </form>

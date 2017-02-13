@@ -14,12 +14,13 @@
             <div class="content-width">
                 <?php
 
-                    $query  = "SELECT * FROM gallery";
+                    $query  = "SELECT * FROM gallery ORDER BY image_date DESC";
                     $get_gallery_query = mysqli_query($connection, $query);
 
                     
 
-                    echo '<div class="row gallery-container">';
+                    echo '<div class="card-columns">';
+                    
                     while($row = mysqli_fetch_assoc($get_gallery_query)){
 
                         $image_id = $row['image_id'];

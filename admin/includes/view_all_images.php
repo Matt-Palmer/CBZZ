@@ -6,12 +6,12 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <h1 class="page-header">
                             Categories
                         </h1>
 
-                        <div class="col-xs-6">
+                        <div>
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -29,14 +29,15 @@
                                         while($row = mysqli_fetch_assoc($display_images_query)){
 
                                             $image_id = $row['image_id'];
-                                            $image_title = $row['image_title'];
-
+                                            $template_id = $row['template_id'];
                                             
-
-                                            echo "<tr>";
+                                            echo "</tr>";
                                             echo "<td>{$image_id}</td>";
-                                            echo "<td class='img-container'><img class='gallery_image' src='../images/{$image_title}'></td>";
-                                            echo "<tr>";
+                                            echo "<td>"; 
+                                            displayTemplate($image_id, $template_id); 
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        
 
                                         }
                                     

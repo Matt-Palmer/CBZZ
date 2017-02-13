@@ -22,12 +22,13 @@ function displayTemplate($image_id, $template_id){
     $image_seven = $row['image_seven'];
     $image_eight = $row['image_eight'];
     $image_nine = $row['image_nine'];
+    $image_date = $row['image_date'];
     
     
     switch($template_id){
         case '1':
-            echo '<div class="col-md-4 image-container">';
-            echo '<div class="inner-container">';
+        echo '<div class="card">';
+            echo '<div class="image-container">';
             echo '<div class="image left-align">';
             echo "<img src='images/$image_one'>";
             echo '</div>';
@@ -41,20 +42,23 @@ function displayTemplate($image_id, $template_id){
             echo "<img src='images/$image_four'>";
             echo '</div>';
             echo '</div>';
+            echo "<p><small class='text-muted'>$image_date</small></p>";
             echo '</div>';
             break;
 
         case '2':
-            echo '<div class="col-lg-4 image-container">';
-            echo '<div class="inner-container">';
+            echo '<div class="card">';
+            echo '<div class=" image-container">';
             echo "<img src='images/$image_one'>";
             echo '</div>';
+            echo "<p><small class='text-muted'>$image_date</small></p>";
             echo '</div>';
             break;
         
         case '3':
-            echo '<div class="col-md-4 image-container">';
-            echo '<div class="inner-container">';
+
+            echo '<div class="card">';
+            echo '<div class="image-container">';
             echo '<div class="third left-align">';
             echo "<img src='images/$image_one'>";
             echo '</div>';
@@ -83,7 +87,9 @@ function displayTemplate($image_id, $template_id){
             echo "<img src='images/$image_nine'>";
             echo '</div>';
             echo '</div>';
+            echo "<p><small class='text-muted'>$image_date</small></p>";
             echo '</div>';
+            
             break;
     }
     

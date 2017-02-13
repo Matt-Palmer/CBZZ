@@ -1,3 +1,7 @@
+.page-header {
+  margin-top: 16px;
+  margin-bottom: 16px; }
+
 #publish-options-container,
 #publish-options-outer-container,
 #category-options-container,
@@ -41,7 +45,91 @@
     .image-container .third:nth-child(even) {
       background-color: lightgray; }
 
+form {
+  overflow: scroll; }
+  form .table {
+    margin-top: 16px; }
+  form #apply-bulk {
+    width: 100%; }
+  form #add-post {
+    margin-top: 5px;
+    width: 100%; }
+  form .custom-file {
+    width: 100%;
+    margin-bottom: 16px; }
+  form #publish-post {
+    width: 100%; }
+  form #post-content {
+    width: 100%; }
+
 #template-choices .image-container {
   height: 200px; }
 #template-choices .img-placeholder {
   background-color: gray; }
+
+#user-info {
+  position: absolute;
+  right: 0; }
+  #user-info .dropdown-menu {
+    position: absolute;
+    left: -110px; }
+
+.card {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 5px; }
+  .card .image-container {
+    padding: 5px; }
+    .card .image-container .inner-container {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden; }
+    .card .image-container .wide-image {
+      width: 55%;
+      height: 50%;
+      background-color: gray; }
+    .card .image-container .left-align {
+      float: left; }
+    .card .image-container .right-align {
+      float: right; }
+    .card .image-container .image {
+      width: 50%;
+      height: 50%;
+      background-color: lightgray; }
+    .card .image-container img {
+      width: 100%;
+      height: 100%; }
+    .card .image-container .third {
+      width: 33.3%;
+      height: 33.3%; }
+      .card .image-container .third:nth-child(odd) {
+        background-color: gray; }
+      .card .image-container .third:nth-child(even) {
+        background-color: lightgray; }
+
+@media only screen and (min-width: 768px) {
+  form #apply-bulk {
+    width: 49.7%; }
+  form #add-post {
+    margin-top: 0;
+    width: 49.7%; }
+  form .custom-file {
+    width: 50%; }
+  form .form-group {
+    width: 50%; }
+  form #publish-post {
+    width: 100%; } }
+@media only screen and (min-width: 992px) {
+  form #bulk-options-container {
+    width: 50%; }
+  form #apply-bulk {
+    width: 24.8%; }
+  form #add-post {
+    margin-top: 0;
+    width: 24.8%; }
+  form .custom-file {
+    width: 33%; }
+  form .form-group {
+    width: 33%; } }
