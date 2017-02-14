@@ -72,7 +72,7 @@
 }
 
 form{
-    overflow: scroll;
+    
 
     .table{
         margin-top: 16px;
@@ -100,6 +100,11 @@ form{
         width: 100%;
     }
 }
+
+#view-posts-table{
+overflow-x: scroll;
+}
+
 
 #template-choices{
     .image-container{

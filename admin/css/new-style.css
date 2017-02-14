@@ -45,22 +45,23 @@
     .image-container .third:nth-child(even) {
       background-color: lightgray; }
 
-form {
-  overflow: scroll; }
-  form .table {
-    margin-top: 16px; }
-  form #apply-bulk {
-    width: 100%; }
-  form #add-post {
-    margin-top: 5px;
-    width: 100%; }
-  form .custom-file {
-    width: 100%;
-    margin-bottom: 16px; }
-  form #publish-post {
-    width: 100%; }
-  form #post-content {
-    width: 100%; }
+form .table {
+  margin-top: 16px; }
+form #apply-bulk {
+  width: 100%; }
+form #add-post {
+  margin-top: 5px;
+  width: 100%; }
+form .custom-file {
+  width: 100%;
+  margin-bottom: 16px; }
+form #publish-post {
+  width: 100%; }
+form #post-content {
+  width: 100%; }
+
+#view-posts-table {
+  overflow-x: scroll; }
 
 #template-choices .image-container {
   height: 200px; }

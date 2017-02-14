@@ -19,7 +19,7 @@
 
                             <?php insertCategories(); ?>
 
-                            <form action="" method="post">
+                            <form id="add-category-form" action="" method="post">
                                 <div class="form-group">
                                     <label for="cat_title">Add Category</label>
                                     <input class="form-control" type="text" name="cat_title">
