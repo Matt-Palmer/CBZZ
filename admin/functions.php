@@ -454,6 +454,9 @@ function insertGalleryImagesForTemplateOne(){
         $imageFour = $_FILES['image-four']['name'];
         $imageFour_temp = $_FILES['image-four']['tmp_name'];
 
+        $image_tags = $_POST['image_tags'];
+        $image_category = $_POST['image_category'];
+
         move_uploaded_file($imageOne_temp, "../images/$imageOne");
         move_uploaded_file($imageTwo_temp, "../images/$imageTwo");
         move_uploaded_file($imageThree_temp, "../images/$imageThree");
@@ -461,8 +464,8 @@ function insertGalleryImagesForTemplateOne(){
 
         $date = gmdate("y-m-d h:i:s");
 
-        $query = "INSERT INTO gallery(template_id, image_date, image_one, image_two, image_three, image_four) ";
-        $query .= "VALUES('$template_id', '$date', '{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}')";
+        $query = "INSERT INTO gallery(template_id, image_category, image_tags, image_date, image_one, image_two, image_three, image_four) ";
+        $query .= "VALUES('$template_id', '$image_category', '$image_tags', '$date', '{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}')";
 
         $insert_image_query = mysqli_query($connection, $query);
     }
@@ -483,12 +486,15 @@ function insertGalleryImagesForTemplateTwo(){
         $imageOne = $_FILES['image-one']['name'];
         $imageOne_temp = $_FILES['image-one']['tmp_name'];
 
+        $image_tags = $_POST['image_tags'];
+        $image_category = $_POST['image_category'];
+
         move_uploaded_file($imageOne_temp, "../images/$imageOne");
 
         $date = gmdate("y-m-d h:i:s");
 
-        $query = "INSERT INTO gallery(template_id,image_date, image_one) ";
-        $query .= "VALUES('$template_id', '$date', '{$imageOne}')";
+        $query = "INSERT INTO gallery(template_id, image_category, image_tags, image_date, image_one) ";
+        $query .= "VALUES('$template_id', '$image_category', '$image_tags', '$date', '{$imageOne}')";
 
         $insert_image_query = mysqli_query($connection, $query);
     }
@@ -545,8 +551,8 @@ function insertGalleryImagesForTemplateThree(){
 
         $date = gmdate("y-m-d h:i:s");
 
-        $query = "INSERT INTO gallery(template_id, image_date, image_one, image_two, image_three, image_four, image_five, image_six, image_seven, image_eight, image_nine) ";
-        $query .= "VALUES('$template_id', $date, '{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}','{$imageFive}', '{$imageSix}', '{$imageSeven}', '{$imageEight}', '{$imageNine}')";
+        $query = "INSERT INTO gallery(template_id, image_category, image_tags, image_date, image_one, image_two, image_three, image_four, image_five, image_six, image_seven, image_eight, image_nine) ";
+        $query .= "VALUES('$template_id', '$image_category', '$image_tags', $date, '{$imageOne}', '{$imageTwo}', '{$imageThree}', '{$imageFour}','{$imageFive}', '{$imageSix}', '{$imageSeven}', '{$imageEight}', '{$imageNine}')";
 
         $insert_image_query = mysqli_query($connection, $query);
     }

@@ -53,7 +53,7 @@
                     if(isset($_GET['tag']) && $_GET['tag'] != 0){
                         $post_cat_id = $_GET['tag'];
 
-                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat_id";
+                        $query = "SELECT * FROM posts WHERE post_category_id = $post_cat_id ORDER BY post_date DESC";
 
                     $select_all_posts_query = mysqli_query($connection, $query);
 
@@ -115,7 +115,7 @@
 
 
 
-                            $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' ";
+                            $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' ORDER BY post_date DESC ";
 
                             $search_query = mysqli_query($connection, $query);
 

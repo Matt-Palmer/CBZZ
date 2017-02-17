@@ -41,7 +41,7 @@
                         </select>
 
 
-                        <button id="apply-filter" class="btn btn-primary">Submit</button>
+                        <button id="apply-filter" class="btn btn-primary center">Submit</button>
 
                        
                         
@@ -64,7 +64,7 @@
                         $post_count = 0;
                         
                         echo "<div class='card-deck'>";
-                       while($row = mysqli_fetch_assoc($view_posts_query)){
+                        while($row = mysqli_fetch_assoc($view_posts_query)){
 
                             $post_title = $row['post_title'];
                             $post_image = $row['post_image'];
@@ -88,7 +88,7 @@
                                         <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
                                         <p class="card-text"><?php echo $post_content; ?></p> 
                                         <p class="card-text"><?php echo $post_author; ?></p>
-                                        <a href="#" class="btn btn-primary" role="button">Read More</a>
+                                        <a href="#" class="btn btn-primary read-more" role="button">Read More</a>
                                     </div>
 
 
@@ -117,13 +117,13 @@
                 <hr>
                 <div id="form-container" class="row">
 
-                    <form action="filtered-posts.php" class="form-inline">
+                    <form action="filtered-gallery.php" class="form-inline">
                         <h6>Filter most recent images</h6>
                         <div id="search" class="input-group col-sm-12 col-md-6 col-xl-4">
                             <input type="text" name="search" class="form-control" placeholder="Search...">
                             <button class="input-group-addon"><span class="fa fa-search"></span></button>
                         </div>
-                        <select class="custom-select col-xs-12 col-md-6 col-xl-4" name="tag" id="category-filter">
+                        <select class="custom-select col-xs-12 col-md-6 col-xl-4" name="category" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $edit_query = "SELECT * FROM categories";
