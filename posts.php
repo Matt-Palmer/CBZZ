@@ -59,7 +59,16 @@
                             $post_date = $row['post_date'];
                             $post_content = $row['post_content'];
                             $post_author = $row['post_author'];
+                            $post_categories = $row['post_category_id'];
                             $post_count ++;
+
+                            $category_query = "SELECT * FROM categories WHERE cat_id = $post_categories";
+                            $get_category_query = mysqli_query($connection, $category_query);
+
+                            while($category = mysqli_fetch_assoc($get_category_query)){
+                                $cat_title = $category['cat_title'];
+                                $cat_id = $category['cat_id'];
+                            }
                         ?>
 
                         <div class="col-xs-12 col-md-6 col-lg-4">
@@ -71,6 +80,7 @@
 
                                     <div class="card-block">
                                         <h3 class="card-title"><?php echo $post_title; ?></h3>
+                                        <p class="link"><a href="filtered-posts.php?tag=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></p>
                                         <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
                                         <p class="card-text"><?php echo $post_content; ?></p> 
                                         <p class="card-text"><?php echo $post_author; ?></p>

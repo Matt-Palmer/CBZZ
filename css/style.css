@@ -114,7 +114,11 @@
       .card .image-container .third:nth-child(even) {
         background-color: lightgray; }
   .card .text-muted {
-    padding: 5px; }
+    padding: 0px; }
+
+.link {
+  font-size: 80%;
+  text-decoration: underline; }
 
 .card-columns {
   column-count: 1; }

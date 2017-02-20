@@ -80,6 +80,7 @@
 
                                     <div class="card-block">
                                         <h3 class="card-title"><?php echo $post_title; ?></h3>
+                                        <p class="link"><a href="filtered-posts.php?tag=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></p>
                                         <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
                                         <p class="card-text"><?php echo $post_content; ?></p> 
                                         <p class="card-text"><?php echo $post_author; ?></p>
@@ -103,16 +104,10 @@
                     ?>
                     
                     
-
-                    
-
-                    
                     <?php
                     
                     if(isset($_GET['search']) && !empty($_GET['search'])){
                             $search = $_GET['search'];
-
-
 
 
                             $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' ORDER BY post_date DESC ";
@@ -148,6 +143,7 @@
 
                                     <div class="card-block">
                                         <h3 class="card-title"><?php echo $post_title; ?></h3>
+                                        <p class="link"><a href="filtered-posts.php?tag=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></p>
                                         <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
                                         <p class="card-text"><?php echo $post_content; ?></p> 
                                         <p class="card-text"><?php echo $post_author; ?></p>
@@ -169,11 +165,6 @@
 
 
                         ?>
-                   
-
-
-                    
-
                     
                 </div>
 
