@@ -1,5 +1,4 @@
 <?php include 'includes/header.php'; ?>
-<?php include 'includes/functions.php'; ?>
 
         <div class="container-fluid">
             <div class="content-width">
@@ -50,22 +49,27 @@
 
                             $category = $_GET['category'];
 
-                            $query = "SELECT * FROM gallery WHERE image_category = $category ";
+                            $query = "SELECT * FROM gallery WHERE image_category = $category ORDER BY image_date DESC";
 
                             $get_gallery_query = mysqli_query($connection, $query);
 
                             echo '<div class="card-columns">';
-                            
-                            while($row = mysqli_fetch_assoc($get_gallery_query)){
+                    
+                                while($row = mysqli_fetch_assoc($get_gallery_query)){
 
-                                $image_id = $row['image_id'];
-                                $template_id = $row['template_id'];
+                                    $image_one = $row['image_one'];
+                                    $image_date = $row['image_date'];
 
-                                displayTemplate($image_id, $template_id);
+                                    echo '<div class="card">';
+                                    echo '<div class="image-container">';
+                                    echo "<img src='images/$image_one'>";
+                                    echo '</div>';
+                                    echo "<p><small class='text-muted'>$image_date</small></p>";
+                                    echo '</div>';
 
-                            }
+                                }
 
-                            echo '</div>'; 
+                            echo '</div>';  
 
                         }
 
@@ -73,7 +77,7 @@
 
                     <?php
 
-                        if(isset($_GET['search']) && !empty($_GET['search'])){
+                      /*  if(isset($_GET['search']) && !empty($_GET['search'])){
                                 
                             $search = $_GET['search'];
 
@@ -99,10 +103,16 @@
                             
                                 while($row = mysqli_fetch_assoc($search_query)){
 
-                                    $image_id = $row['image_id'];
-                                    $template_id = $row['template_id'];
+                                    $image_one = $row['image_one'];
+                        $image_date = $row['image_date'];
 
-                                    displayTemplate($image_id, $template_id);
+                        echo '<div class="card">';
+                        echo '<div class="image-container">';
+                        echo "<img src='images/$image_one'>";
+                        echo '</div>';
+                        echo "<p><small class='text-muted'>$image_date</small></p>";
+                        echo '</div>';
+
 
                                 }
 
@@ -110,7 +120,7 @@
 
                             }
 
-                        }
+                        }*/
 
 
                     ?>

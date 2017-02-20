@@ -19,7 +19,7 @@
                             <input type="text" name="search" class="form-control" id="inlineFormInputGroup" placeholder="Search...">
                             <button class="input-group-addon btn btn-primary"><span class="fa fa-search"></span></button>
                         </div>
-                        <select class="custom-select col-sm-12 col-md-6" name="tag" id="category-filter">
+                        <select class="custom-select col-sm-12 col-md-6" name="category" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $edit_query = "SELECT * FROM categories";
@@ -50,8 +50,8 @@
 
                     <?php
 
-                    if(isset($_GET['tag']) && $_GET['tag'] != 0){
-                        $post_cat_id = $_GET['tag'];
+                    if(isset($_GET['category']) && $_GET['category'] != 0){
+                        $post_cat_id = $_GET['category'];
 
                         $query = "SELECT * FROM posts WHERE post_category_id = $post_cat_id ORDER BY post_date DESC";
 
@@ -67,7 +67,16 @@
                             $post_date = $row['post_date'];
                             $post_content = $row['post_content'];
                             $post_author = $row['post_author'];
+                            $post_categories = $row['post_category_id'];
                             $post_count ++;
+
+                            $category_query = "SELECT * FROM categories WHERE cat_id = $post_categories";
+                            $get_category_query = mysqli_query($connection, $category_query);
+
+                            while($category = mysqli_fetch_assoc($get_category_query)){
+                                $cat_title = $category['cat_title'];
+                                $cat_id = $category['cat_id'];
+                            }
                         ?>
 
                         <div class="col-xs-12 col-md-6 col-lg-4">
@@ -131,6 +140,15 @@
                                     $post_date = $row['post_date'];
                                     $post_image = $row['post_image'];
                                     $post_content = $row['post_content'];
+                                    $post_categories = $row['post_category_id'];
+
+                                    $category_query = "SELECT * FROM categories WHERE cat_id = $post_categories";
+                                    $get_category_query = mysqli_query($connection, $category_query);
+
+                                    while($category = mysqli_fetch_assoc($get_category_query)){
+                                        $cat_title = $category['cat_title'];
+                                        $cat_id = $category['cat_id'];
+                                    }
 
                     ?>
 
