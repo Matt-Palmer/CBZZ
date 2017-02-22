@@ -15,11 +15,12 @@
             <div class="content-width">
                 <div id="form-container" class="row">
                     <form action="filtered-posts.php" class="form-inline">
-                        <div id="search" class="input-group col-sm-12 col-md-6">
+                        <h6>Filter posts</h6>
+                        <div id="search" class="input-group col-sm-12">
                             <input type="text" name="search" class="form-control" id="inlineFormInputGroup" placeholder="Search...">
                             <button class="input-group-addon btn btn-primary"><span class="fa fa-search"></span></button>
                         </div>
-                        <select class="custom-select col-sm-12 col-md-6" name="category" id="category-filter">
+                        <select class="custom-select col-sm-12" name="category" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $edit_query = "SELECT * FROM categories";
@@ -79,7 +80,7 @@
                             }
                         ?>
 
-                        <div class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                             
                                 <div class="card">
 
@@ -93,7 +94,7 @@
                                         <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
                                         <p class="card-text"><?php echo $post_content; ?></p> 
                                         <p class="card-text"><?php echo $post_author; ?></p>
-                                        <a href="#" class="btn btn-primary" role="button">Read More</a>
+                                        <a href="#" class="btn btn-primary read-more" role="button">Read More</a>
                                     </div>
 
 
@@ -152,7 +153,7 @@
 
                     ?>
 
-                            <div class="col-md-4">
+                            <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card">
 
                                     <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">
@@ -165,7 +166,7 @@
                                         <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
                                         <p class="card-text"><?php echo $post_content; ?></p> 
                                         <p class="card-text"><?php echo $post_author; ?></p>
-                                        <a href="#" class="btn btn-primary" role="button">Read More</a>
+                                        <a href="#" class="btn btn-primary read-more" role="button">Read More</a>
                                     </div>
 
 

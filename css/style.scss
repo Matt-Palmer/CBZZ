@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+.content-width{
+    position: relative;
+}
+
 .content-width,
 .container{
     width: 70%;
@@ -44,8 +48,8 @@
 }
 
 #form-container{
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 100%;
+    margin-left: 0;
     margin-bottom: 32px;
     
 
@@ -54,13 +58,18 @@
         width: 100%;
         margin-top: 17px;
     }
+
     .form-inline{
         width: 100%;
-        
+        background-color: #f7f7f7;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 8px;
 
         #reset{
             width: 100%;
             color: #0275d8;
+            margin-bottom: 10px;
         }
 
         
@@ -84,15 +93,16 @@
 
 .card-deck{
     .card{
-    margin-bottom: 20px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+        margin-bottom: 20px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
 
         .read-more{
             width: 100%;
         }
     }
+
     img{
         width: 100%;
     }
@@ -195,35 +205,13 @@
 @media only screen and (min-width: 768px) {
     #form-container{
 
-    
         .form-inline{
+
+            
 
         
             #search{
-            margin-bottom: 0px;
-            padding-right: 5px;
-            }
-
-            
-       
-
-        }
-    }
-
-    .card-columns{
-        column-count: 3;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    #form-container{
-
-    
-        .form-inline{
-
-        
-            #apply-filter{
-                width: 32.5%;
+            margin-bottom: 10px;
             }
 
             #re-apply-filter,
@@ -232,40 +220,77 @@
             }
 
             #reset{
+                margin-top: 10px;
                 margin-left: 5px;
+            }
+       
+
+        }
+    }
+
+    .card-columns{
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #form-container{
+    
+    width: 50%;
+        .form-inline{
+
+        
+            #apply-filter{
+                width: 50%;
             }
 
             
-       
+            #reset{
+                margin-top: 10px;
+            }
+            
+            #re-apply-filter,
+            #reset{
+                width: 33%;
+            }
 
         }
     }
 
     #view-gallery,
     #view-all-posts{
+        position: absolute;
+        right: 0;
         margin-bottom: 15px;
-        width: 32.5%;
+        width: 33.3%;
+    }
+
+    #recent-images-heading{
+        margin-top: 53px;
+    }
+
+    .card-columns{
+        column-count: 3;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     #form-container{
 
-    
         .form-inline{
 
         
             #apply-filter{
-                margin-left: 5px;
-                width: 32%;
+                width: 33%;
             }
 
-            
-       
 
         }
     }
 
+    .card-columns{
+        column-count: 4;
+    }
     
 }
 

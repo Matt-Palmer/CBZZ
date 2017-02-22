@@ -15,11 +15,12 @@
             <div class="content-width">
                 <div id="form-container" class="row">
                     <form action="filtered-posts.php" class="form-inline">
-                        <div id="search" class="input-group col-sm-12 col-md-6 col-xl-4">
+                        <h6>Filter posts</h6>
+                        <div id="search" class="input-group col-sm-12">
                             <input type="text" name="search" class="form-control" placeholder="Search...">
                             <button class="input-group-addon"><span class="fa fa-search"></span></button>
                         </div>
-                        <select class="custom-select col-sm-12 col-md-6 col-xl-4" name="tag" id="category-filter">
+                        <select class="custom-select col-sm-12" name="tag" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $edit_query = "SELECT * FROM categories";
@@ -71,7 +72,7 @@
                             }
                         ?>
 
-                        <div class="col-xs-12 col-md-6 col-lg-4">
+                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card">
 
                                     <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">

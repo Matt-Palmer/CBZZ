@@ -61,18 +61,17 @@ if(isset($_POST['checkboxArray'])){
 }
 
 ?>
-
-<form id="view-posts-form" action="" method="post">
-
-    <div id="bulk-options-container" class="form-group col-xs-4">
-        <select class="form-control" name="bulk_options" id="">
+<hr>
+<form class="view-posts-form" action="" method="post">
+    <h6>Bulk options</h6>
+        <select class="form-control col-sm-12" name="bulk_options" id="">
             <option value="">Select Options</option>
             <option value="Published">Publish</option>
             <option value="Draft">Draft</option>
             <option value="delete">Delete</option>
             <option value="clone">Clone</option>
         </select>
-    </div>
+    
 
     
     <input id="apply-bulk" type="submit" name="submit" class="btn btn-primary" value="Apply">
@@ -81,6 +80,18 @@ if(isset($_POST['checkboxArray'])){
 
     
 </form>
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container">
 <table id="view-posts-table" class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -109,3 +120,4 @@ if(isset($_POST['checkboxArray'])){
 
         </tbody>
     </table>
+</div>

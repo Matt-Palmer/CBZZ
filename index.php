@@ -27,14 +27,14 @@
                         <h6>Filter most recent posts</h6>
 
                     <!--POST SEARCH-->
-                        <div id="search" class="input-group col-sm-12 col-md-6 col-xl-4">
+                        <div id="search" class="input-group col-sm-12">
                             <input type="text" name="search" class="form-control" placeholder="Search posts...">
-                            <button class="input-group-addon"><span class="fa fa-search"></span></button>
+                            <button class="input-group-addon btn btn-primary"><span class="fa fa-search"></span></button>
                         </div>
                     <!--POST SEARCH-->
 
                     <!--CATEGORY SELECT SEARCH-->
-                        <select class="custom-select col-sm-12 col-md-6 col-xl-4" name="category" id="category-filter">
+                        <select class="custom-select col-sm-12" name="category" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $select_categories = "SELECT * FROM categories";
@@ -64,7 +64,7 @@
 
                     <?php
 
-                        $select_posts = "SELECT * FROM posts ORDER BY post_date DESC LIMIT 6";
+                        $select_posts = "SELECT * FROM posts ORDER BY post_date DESC LIMIT 8";
                         $select_posts_query = mysqli_query($connection, $select_posts);
                         
                         echo "<div class='card-deck'>";
@@ -88,7 +88,7 @@
 
                     ?>
 
-                    <div class="col-xs-12 col-md-6 col-lg-4">
+                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                         <div class="card">
 
                             <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">
@@ -138,14 +138,14 @@
 
                         <h6>Filter most recent images</h6>
                     <!--IMAGES SEARCH-->
-                        <div id="search" class="input-group col-sm-12 col-md-6 col-xl-4">
+                        <div id="search" class="input-group col-sm-12">
                             <input type="text" name="search" class="form-control" placeholder="Search...">
                             <button class="input-group-addon"><span class="fa fa-search"></span></button>
                         </div>
                     <!--IMAGES SEARCH-->
 
                     <!--IMAGES CATEGORY FILTER-->
-                        <select class="custom-select col-xs-12 col-md-6 col-xl-4" name="category" id="category-filter">
+                        <select class="custom-select col-sm-12" name="category" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $select_categories = "SELECT * FROM categories";
@@ -173,7 +173,7 @@
 
                     <?php
 
-                        $select_recent_images = "SELECT * FROM gallery ORDER BY image_date DESC LIMIT 6";
+                        $select_recent_images = "SELECT * FROM gallery ORDER BY image_date DESC LIMIT 8";
                         $select_recent_images_query = mysqli_query($connection, $select_recent_images);
 
                         $post_count = 0;
@@ -186,7 +186,7 @@
 
                     ?>
 
-                    <div class="col-xs-12 col-md-6 col-lg-4">
+                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                     
                         <?php 
 

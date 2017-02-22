@@ -15,11 +15,12 @@
             <div class="content-width">
                 <div id="form-container" class="row">
                     <form action="filtered-gallery.php" class="form-inline">
-                        <div id="search" class="input-group col-sm-12 col-md-6">
+                        <h6>Filter images</h6>
+                        <div id="search" class="input-group col-sm-12">
                             <input type="text" name="search" class="form-control" id="inlineFormInputGroup" placeholder="Search...">
                             <button class="input-group-addon btn btn-primary"><span class="fa fa-search"></span></button>
                         </div>
-                        <select class="custom-select col-sm-12 col-md-6" name="category" id="category-filter">
+                        <select class="custom-select col-sm-12" name="category" id="category-filter">
                             <option value="0">Select a category</option>
                             <?php 
                                 $edit_query = "SELECT * FROM categories";
@@ -36,7 +37,7 @@
                         </select>
 
                         <button id="re-apply-filter" class="btn btn-primary">Submit</button>
-                        <a id="reset" class="btn btn-secondary" href="posts.php">Reset Filter</a>
+                        <a id="reset" class="btn btn-secondary" href="gallery.php">Reset Filter</a>
 
 
                         
@@ -77,7 +78,7 @@
 
                     <?php
 
-                      /*  if(isset($_GET['search']) && !empty($_GET['search'])){
+                        if(isset($_GET['search']) && !empty($_GET['search'])){
                                 
                             $search = $_GET['search'];
 
@@ -120,7 +121,7 @@
 
                             }
 
-                        }*/
+                        }
 
 
                     ?>

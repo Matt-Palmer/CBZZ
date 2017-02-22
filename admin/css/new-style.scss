@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .page-header{
     margin-top: 16px;
     margin-bottom: 16px;
@@ -7,9 +11,56 @@
 #publish-options-outer-container,
 #category-options-container,
 #category-options-outer-container,
-#bulk-options-container{
+{
     padding-left: 0;
+
 }
+
+
+
+.view-posts-form{
+    width: 100%;
+    background-color: #f7f7f7;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+
+    h6{
+        display: block;
+        width: 100%;
+        padding-top: 17px;
+    }
+
+    #apply-bulk{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #add-post{
+        margin: 10px 0;
+        width: 100%;
+    }
+
+}
+
+#add-image-form,
+#add-post-form{
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 10px 10px 0 10px;
+    border-radius: 8px;
+
+    #image-select{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .publish-post{
+        width: 100%;
+    }
+}
+
+
 
 .gallery_image{
     width: 100px;
@@ -20,90 +71,12 @@
     text-align: center;
 }
 
-.image-container{
-    padding: 0;
-    height: 300px;
-    border: 2px solid black;
-    position: relative;
-    overflow: hidden;
-
-    .wide-image{
-        width: 55%;
-        height: 50%;
-        background-color: gray;
-    }
-
-    .left-align{
-        float: left;
-    }
-
-    .right-align{
-        float: right;
-    }
-
-    .image{
-        width: 50%;
-        height: 50%;
-        
-        &:nth-child(1),
-        &:nth-child(4){
-            background-color: gray;
-        }
-
-        &:nth-child(2),
-        &:nth-child(3){
-            background-color: lightgray;
-        }
-    }
-
-    .third{
-        width: 33.3%;
-        height: 33.3%;
-        
-        &:nth-child(odd){
-            background-color: gray;
-        }
-
-        &:nth-child(even){
-            background-color: lightgray;
-        }
-    }
-    
+.table-container{
+    overflow-x: scroll;
+    margin-top: 16px;
 }
 
-form{
-    
 
-    .table{
-        margin-top: 16px;
-    }
-
-    #apply-bulk{
-        width: 100%;
-    }
-
-    #add-post{
-        margin-top: 5px;
-        width: 100%;
-    }
-
-    .custom-file{
-        width: 100%;
-        margin-bottom: 16px;
-    }
-
-    #publish-post{
-        width: 100%;
-    }
-
-    #post-content{
-        width: 100%;
-    }
-}
-
-#view-posts-table{
-overflow-x: scroll;
-}
 
 
 #template-choices{
@@ -187,54 +160,14 @@ overflow-x: scroll;
 }
 
 @media only screen and (min-width: 768px) {
-    form{
 
-        #apply-bulk{
-            width: 49.7%;
-        }
+    
 
-        #add-post{
-            margin-top: 0;
-            width: 49.7%;
-        }
-
-        .custom-file{
-            width: 50%;
-        }
-
-        .form-group{
-            width: 50%;
-        }
-
-        #publish-post{
-            width: 100%;
-        }
-    }
 }
 
 @media only screen and (min-width: 992px) {
-   form{
-       #bulk-options-container{
-           width: 50%;
-       }
 
-        #apply-bulk{
-            width: 24.8%;
-        }
-
-        #add-post{
-            margin-top: 0;
-            width: 24.8%;
-        }
-
-        .custom-file{
-            width: 33%;
-        }
-
-        .form-group{
-            width: 33%;
-        }
-    }
+    
 }
 
 @media only screen and (min-width: 1200px) {
