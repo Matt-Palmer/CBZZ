@@ -12,6 +12,7 @@ function displayCategories(){
         $cat_title = $row['cat_title'];
 
         echo "<tr>";
+        echo "<td><input class='checkboxes' type='checkbox' name='checkboxArray[]' value='{$cat_id}'></td>";
         echo "<td>{$cat_id}</td>";          
         echo "<td>{$cat_title}</td>";
         echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
@@ -51,6 +52,20 @@ function deleteCategories(){
 
         header("Location: categories.php");
     }
+
+    if(isset($_POST['bulk_options'])){
+        if(isset($_POST['checkboxArray'])){
+            foreach($_POST['checkboxArray'] as $checkboxValue){
+                
+                $query = "DELETE FROM categories WHERE cat_id = '$checkboxValue'";
+                $delete_query = mysqli_query($connection, $query);
+
+                header("Location: categories.php");
+            }
+        }
+    }
+
+    
 }
 
 function addPost(){
@@ -309,34 +324,6 @@ function deleteUser(){
     }
 }
 
-function createComment(){
-    global $connection;
-
-    if(isset($_POST['create_comment'])){
-        $post_id = $_GET['p_id'];
-
-        $comment_author = $_POST['comment_author'];
-        $comment_email = $_POST['comment_email'];
-        $comment_content = $_POST['comment_content'];
-        $query = "INSERT INTO comments(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
-        $query .= "VALUES($post_id, '{$comment_author}', '{$comment_email}', '{$comment_content}', 'unapproved', now())";
-
-        $create_comment_query = mysqli_query($connection, $query);
-
-        if(confirmQuery($create_comment_query)){
-            echo "<h4 class='bg-danger text-danger' style='padding: 5px'>Comment could not be added</h4>";
-        }else{
-            echo "<h4 class='bg-success text-success' style='padding: 5px'>Comment successfully added</h4>";
-        }
-
-        $update_comment_count_query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $post_id";
-
-        $update_comment_count = mysqli_query($connection, $update_comment_count_query);
-
-        confirmQuery($update_comment_count);
-    }
-}
-
 function displayCommentTable(){
 
     global $connection;
@@ -348,7 +335,6 @@ function displayCommentTable(){
         $comment_id = $row['comment_id'];
         $comment_category_id = $row['comment_post_id'];
         $comment_author = $row['comment_author'];
-        $comment_email = $row['comment_email'];
         $comment_content = $row['comment_content'];
         $comment_status = $row['comment_status'];
         $comment_date = $row['comment_date'];
@@ -357,8 +343,7 @@ function displayCommentTable(){
         echo "<tr>";
         echo "<td>{$comment_id}</td>";       
         echo "<td>{$comment_author}</td>";            
-        echo "<td>{$comment_content}</td>";            
-        echo "<td>{$comment_email}</td>";
+        echo "<td>{$comment_content}</td>";   
         echo "<td>{$comment_status}</td>";
 
         $query = "SELECT * FROM posts WHERE post_id = $comment_category_id";
@@ -385,10 +370,18 @@ function deleteComments(){
     if(isset($_GET['delete'])){
         $comment_id = $_GET['delete'];//delete refers to the href in the link 'posts.php?delete'
 
-        $query = "DELETE FROM comments WHERE comment_id = {$comment_id}";
+        $get_comment_post_id = "SELECT comment_post_id FROM comments WHERE comment_id = $comment_id";
+        $get_comment_post_id_query = mysqli_query($connection, $get_comment_post_id);
+        $row = mysqli_fetch_assoc($get_comment_post_id_query);
+        $comment_post_id = $row['comment_post_id'];
 
+        $query = "DELETE FROM comments WHERE comment_id = {$comment_id}";
         $delete_query = mysqli_query($connection, $query);
 
+        $update_comment_count_query = "UPDATE posts SET post_comment_count = post_comment_count - 1 WHERE post_id = $comment_post_id";
+        $update_comment_count = mysqli_query($connection, $update_comment_count_query);
+
+        echo "deleted";
         header("Location: comments.php");
     }
 }
@@ -465,99 +458,6 @@ function insertGalleryImagesForTemplateTwo(){
 }
 
 
-function displayTemplate($image_id, $template_id){
 
-    global $connection;
-
-    $image_id = $image_id;
-    $template_id = $template_id;
-
-    $query = "SELECT * FROM gallery WHERE image_id = '$image_id'";
-    $get_images_query = mysqli_query($connection, $query);
-
-    $row = mysqli_fetch_assoc($get_images_query);
-
-    $image_one = $row['image_one'];
-    $image_two = $row['image_two'];
-    $image_three = $row['image_three'];
-    $image_four = $row['image_four'];
-    $image_five = $row['image_five'];
-    $image_six = $row['image_six'];
-    $image_seven = $row['image_seven'];
-    $image_eight = $row['image_eight'];
-    $image_nine = $row['image_nine'];
-    $image_date = $row['image_date'];
-    
-    
-    switch($template_id){
-        case '1':
-        echo '<div class="card">';
-            echo '<div class="image-container">';
-            echo '<div class="image left-align">';
-            echo "<img src='../images/$image_one'>";
-            echo '</div>';
-            echo '<div class="image right-align">';
-            echo "<img src='../images/$image_two'>";
-            echo '</div>';
-            echo '<div class="image left-align">';
-            echo "<img src='../images/$image_three'>";
-            echo '</div>';
-            echo '<div class="image right-align">';
-            echo "<img src='../images/$image_four'>";
-            echo '</div>';
-            echo '</div>';
-            echo "<p><small class='text-muted'>$image_date</small></p>";
-            echo '</div>';
-            break;
-
-        case '2':
-            echo '<div class="card">';
-            echo '<div class=" image-container">';
-            echo "<img src='../images/$image_one'>";
-            echo '</div>';
-            echo "<p><small class='text-muted'>$image_date</small></p>";
-            echo '</div>';
-            break;
-        
-        case '3':
-
-            echo '<div class="card">';
-            echo '<div class="image-container">';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_one'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_two'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_three'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_four'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_five'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_six'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_seven'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_eight'>";
-            echo '</div>';
-            echo '<div class="third left-align">';
-            echo "<img src='../images/$image_nine'>";
-            echo '</div>';
-            echo '</div>';
-            echo "<p><small class='text-muted'>$image_date</small></p>";
-            echo '</div>';
-            
-            break;
-    }
-    
-
-}
 
 ?>

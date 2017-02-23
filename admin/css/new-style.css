@@ -11,22 +11,51 @@
 #category-options-outer-container {
   padding-left: 0; }
 
-.view-posts-form {
+.view-images-form,
+.view-posts-form,
+.add-category-form {
   width: 100%;
   background-color: #f7f7f7;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 8px; }
-  .view-posts-form h6 {
+  border-radius: 8px;
+  padding: 0 10px 10px 10px; }
+  .view-images-form h6,
+  .view-posts-form h6,
+  .add-category-form h6 {
     display: block;
     width: 100%;
-    padding-top: 17px; }
-  .view-posts-form #apply-bulk {
-    margin-top: 10px;
+    padding-top: 17px;
+    margin-left: 15px; }
+  .view-images-form .form-control,
+  .view-posts-form .form-control,
+  .add-category-form .form-control {
     width: 100%; }
-  .view-posts-form #add-post {
-    margin: 10px 0;
+  .view-images-form #add-post,
+  .view-images-form #apply-bulk,
+  .view-images-form #add-image,
+  .view-images-form #add-category,
+  .view-images-form #delete-categories,
+  .view-posts-form #add-post,
+  .view-posts-form #apply-bulk,
+  .view-posts-form #add-image,
+  .view-posts-form #add-category,
+  .view-posts-form #delete-categories,
+  .add-category-form #add-post,
+  .add-category-form #apply-bulk,
+  .add-category-form #add-image,
+  .add-category-form #add-category,
+  .add-category-form #delete-categories {
+    margin: 0px 15px;
     width: 100%; }
+  .view-images-form #add-image,
+  .view-images-form #add-post,
+  .view-images-form #delete-categories,
+  .view-posts-form #add-image,
+  .view-posts-form #add-post,
+  .view-posts-form #delete-categories,
+  .add-category-form #add-image,
+  .add-category-form #add-post,
+  .add-category-form #delete-categories {
+    margin-top: 10px; }
 
 #add-image-form,
 #add-post-form {
@@ -38,9 +67,14 @@
   #add-post-form #image-select {
     padding-top: 5px;
     padding-bottom: 5px; }
-  #add-image-form .publish-post,
-  #add-post-form .publish-post {
+  #add-image-form #publish-post,
+  #add-image-form #add-image,
+  #add-post-form #publish-post,
+  #add-post-form #add-image {
     width: 100%; }
+
+.table-container {
+  overflow-x: scroll; }
 
 .gallery_image {
   width: 100px;
@@ -49,9 +83,19 @@
 .img-container {
   text-align: center; }
 
-.table-container {
-  overflow-x: scroll;
-  margin-top: 16px; }
+.table {
+  margin-top: 16px;
+  width: auto; }
+  .table:table-bordered {
+    border-radius: 8px; }
+  .table .image-container {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 8px; }
+    .table .image-container img {
+      max-width: 100%;
+      border-radius: 8px; }
 
 #template-choices .image-container {
   height: 200px; }
@@ -99,3 +143,56 @@
         background-color: gray; }
       .card .image-container .third:nth-child(even) {
         background-color: lightgray; }
+
+@media only screen and (min-width: 768px) {
+  .view-images-form,
+  .view-posts-form,
+  .add-category-form {
+    width: 425px; }
+    .view-images-form .form-control,
+    .view-posts-form .form-control,
+    .add-category-form .form-control {
+      width: 405px; }
+    .view-images-form #add-post,
+    .view-images-form #apply-bulk,
+    .view-images-form #add-image,
+    .view-images-form #add-category,
+    .view-images-form #delete-categories,
+    .view-posts-form #add-post,
+    .view-posts-form #apply-bulk,
+    .view-posts-form #add-image,
+    .view-posts-form #add-category,
+    .view-posts-form #delete-categories,
+    .add-category-form #add-post,
+    .add-category-form #apply-bulk,
+    .add-category-form #add-image,
+    .add-category-form #add-category,
+    .add-category-form #delete-categories {
+      width: 200px; }
+    .view-images-form #apply-bulk,
+    .view-images-form #add-category,
+    .view-posts-form #apply-bulk,
+    .view-posts-form #add-category,
+    .add-category-form #apply-bulk,
+    .add-category-form #add-category {
+      margin-right: 5px; }
+    .view-images-form #add-post,
+    .view-images-form #add-image,
+    .view-images-form #delete-categories,
+    .view-posts-form #add-post,
+    .view-posts-form #add-image,
+    .view-posts-form #delete-categories,
+    .add-category-form #add-post,
+    .add-category-form #add-image,
+    .add-category-form #delete-categories {
+      margin-top: 0;
+      margin-left: 0; }
+
+  #add-image-form #publish-post,
+  #add-image-form #add-image,
+  #add-post-form #publish-post,
+  #add-post-form #add-image {
+    width: 200px; }
+
+  #add-image-form .form-control {
+    width: 405px; } }

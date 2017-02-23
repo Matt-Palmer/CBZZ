@@ -52,7 +52,6 @@ if(isset($_POST['checkboxArray'])){
             }else{
                 echo "<h4 class='bg-success text-success' style='padding: 5px'>Post successfully created</h4>";
 
-                header("refresh: 2; URL = posts.php");
             }
             break;
 
@@ -62,62 +61,69 @@ if(isset($_POST['checkboxArray'])){
 
 ?>
 <hr>
-<form class="view-posts-form" action="" method="post">
-    <h6>Bulk options</h6>
-        <select class="form-control col-sm-12" name="bulk_options" id="">
-            <option value="">Select Options</option>
-            <option value="Published">Publish</option>
-            <option value="Draft">Draft</option>
-            <option value="delete">Delete</option>
-            <option value="clone">Clone</option>
-        </select>
+<form action="" method="post">
+    <div class="view-posts-form">
+        <div class="row">
+            <h6>Bulk options</h6>
+
+            <div  class="form-group col-sm-12">
+                <select class="form-control" name="bulk_options" id="">
+                    <option value="">Select Options</option>
+                    <option value="Published">Publish</option>
+                    <option value="Draft">Draft</option>
+                    <option value="delete">Delete</option>
+                    <option value="clone">Clone</option>
+                </select>
+
+            </div>
+
+            <input id="apply-bulk" type="submit" name="submit" class="btn btn-primary" value="Apply">
+            <a id="add-post" href="posts.php?source=add_post" class="btn btn-secondary">Add Post</a>
+            
+        </div>
+    </div>
     
 
-    
-    <input id="apply-bulk" type="submit" name="submit" class="btn btn-primary" value="Apply">
-    <a id="add-post" href="" class="btn btn-secondary">Add Post</a>
-    
 
-    
+
+
+
+
+
+
+
+
+
+
+    <div class="table-container">
+    <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th><input id="select-all" type="checkbox"></th>
+                    <th>Post ID</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Image</th>
+                    <th>Tags</th>
+                    <th>Comments</th>
+                    <th>Date</th>
+                    <th>View</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <?php displayPostData(); ?>
+
+                <?php deletePost(); ?>
+
+            </tbody>
+        </table>
+    </div>
+
 </form>
-
-
-
-
-
-
-
-
-
-
-
-<div class="table-container">
-<table id="view-posts-table" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th><input id="select-all" type="checkbox"></th>
-                <th>Post ID</th>
-                <th>Author</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Image</th>
-                <th>Tags</th>
-                <th>Comments</th>
-                <th>Date</th>
-                <th>View</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            <?php displayPostData(); ?>
-
-            <?php deletePost(); ?>
-
-        </tbody>
-    </table>
-</div>

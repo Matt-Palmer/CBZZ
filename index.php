@@ -70,7 +70,8 @@
                         echo "<div class='card-deck'>";
 
                         while($row = mysqli_fetch_assoc($select_posts_query)){
-
+                            
+                            $post_id = $row['post_id'];
                             $post_title = $row['post_title'];
                             $post_image = $row['post_image'];
                             $post_date = $row['post_date'];
@@ -102,7 +103,7 @@
                                 <p class="card-text"><?php echo $post_content; ?></p> 
                                 <p class="card-text"><?php echo $post_author; ?></p>
                                 
-                                <a href="#" class="btn btn-primary read-more" role="button">Read More</a>
+                                <a href="post.php?p_id=<?php echo $post_id; ?>" class="btn btn-primary read-more" role="button">Read More</a>
 
                             </div>
 

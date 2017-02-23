@@ -38,7 +38,7 @@
                                 <a class="nav-link fa fa-tags" href="categories.php"> Categories<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fa fa-comments" href="#"> Comments<span class="sr-only">(current)</span></a>
+                                <a class="nav-link fa fa-comments" href="comments.php"> Comments<span class="sr-only">(current)</span></a>
                             </li>
                         
                             <li class="nav-item">

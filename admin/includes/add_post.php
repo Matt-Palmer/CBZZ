@@ -60,8 +60,8 @@
             <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
         </div>
 
-        <div class="form-group col-sm-12 col-lg-4 col-xl-3">
-            <input id="" type="submit" class="btn btn-primary publish-post" name="create-post" value="Publish Post">
+        <div class="form-group col-sm-12 ">
+            <input id="publish-post" type="submit" class="btn btn-primary" name="create-post" value="Publish Post">
         </div>
     </div>
 </form>

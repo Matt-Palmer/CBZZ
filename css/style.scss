@@ -53,7 +53,7 @@
     margin-bottom: 32px;
     
 
-    h6{
+    h6, h4{
         display: block;
         width: 100%;
         margin-top: 17px;
@@ -202,14 +202,66 @@
     column-count: 1;
 }
 
+#post-container{
+    .image-container{
+        width: 100%;
+        max-width: 750px;
+        padding: 5px;
+        border: 1px solid lightgray;
+        border-radius: 8px;
+
+        img{
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+
+#add-comment-form,
+.media{
+    width: 100%;
+    max-width: 650px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 0 10px 10px 10px;
+    
+
+    h4{
+        display: block;
+        width: 100%;
+        padding-top: 17px;
+        margin-left: 15px;
+    }
+
+    p{
+        display: block;
+    }
+
+    .form-control{
+        width: 100%;
+    }
+
+    #add-comment{
+        margin: 0px 15px;
+        width: 100%;
+    }
+
+    
+
+}
+
+.media{
+    margin-bottom: 10px;
+    height: auto;
+}
+
+
 @media only screen and (min-width: 768px) {
     #form-container{
 
         .form-inline{
 
-            
-
-        
             #search{
             margin-bottom: 10px;
             }
@@ -223,7 +275,6 @@
                 margin-top: 10px;
                 margin-left: 5px;
             }
-       
 
         }
     }
@@ -231,6 +282,9 @@
     .card-columns{
         column-count: 2;
     }
+
+
+    
 }
 
 @media only screen and (min-width: 992px) {
@@ -272,6 +326,16 @@
     .card-columns{
         column-count: 3;
     }
+
+    #add-comment-form{
+
+        #add-comment{
+            margin: 0px 15px;
+            width: 200px;
+        }
+
+    }
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -290,6 +354,20 @@
 
     .card-columns{
         column-count: 4;
+    }
+
+    #post-container{
+        .image-container{
+            width: 750px;
+            padding: 5px;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+
+            img{
+                max-width: 100%;
+                border-radius: 8px;
+            }
+        }
     }
     
 }
