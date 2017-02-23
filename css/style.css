@@ -99,14 +99,6 @@
       border-radius: 4px;
       position: relative;
       overflow: hidden; }
-    .card .image-container .wide-image {
-      width: 55%;
-      height: 50%;
-      background-color: gray; }
-    .card .image-container .left-align {
-      float: left; }
-    .card .image-container .right-align {
-      float: right; }
     .card .image-container .image {
       width: 50%;
       height: 50%;
@@ -114,13 +106,8 @@
     .card .image-container img {
       width: 100%;
       height: 100%; }
-    .card .image-container .third {
-      width: 33.3%;
-      height: 33.3%; }
-      .card .image-container .third:nth-child(odd) {
-        background-color: gray; }
-      .card .image-container .third:nth-child(even) {
-        background-color: lightgray; }
+  .card #image-date {
+    margin-left: 5px; }
   .card .text-muted {
     padding: 0px; }
 

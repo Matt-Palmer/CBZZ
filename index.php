@@ -183,7 +183,6 @@
                         while($row = mysqli_fetch_assoc($select_recent_images_query)){
 
                             $image_id = $row['image_id'];
-                            $template_id = $row['template_id'];
 
                     ?>
 
@@ -198,7 +197,7 @@
                             echo '<div class="image-container">';
                             echo "<img src='images/$image_one'>";
                             echo '</div>';
-                            echo "<p><small class='text-muted'>$image_date</small></p>";
+                            echo "<p id='image-date'><small class='text-muted'>$image_date</small></p>";
                             echo '</div>';
                         
                         ?>

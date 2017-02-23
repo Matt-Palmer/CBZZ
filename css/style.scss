@@ -143,21 +143,6 @@
             position: relative;
             overflow: hidden;
         }
-        
-
-        .wide-image{
-            width: 55%;
-            height: 50%;
-            background-color: gray;
-        }
-
-        .left-align{
-            float: left;
-        }
-
-        .right-align{
-            float: right;
-        }
 
         .image{
             width: 50%;
@@ -170,23 +155,16 @@
             height: 100%;
         }
 
-        .third{
-            width: 33.3%;
-            height: 33.3%;
-            
-            &:nth-child(odd){
-                background-color: gray;
-            }
-
-            &:nth-child(even){
-                background-color: lightgray;
-            }
-        }
+        
 
         
         
     }
     
+    #image-date{
+        margin-left: 5px;
+    }
+
     .text-muted{
         padding: 0px;
     }

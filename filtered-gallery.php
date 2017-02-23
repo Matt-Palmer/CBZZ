@@ -3,8 +3,8 @@
         <div class="container-fluid">
             <div class="content-width">
                 <div class="jumbotron">
-                    <h1>Company Name</h1>
-                    <p>Welcome to Company Name</p>
+                    <h1>Gallery</h1>
+                    <p>View all of my previous work here!!</p>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                                     echo '<div class="image-container">';
                                     echo "<img src='images/$image_one'>";
                                     echo '</div>';
-                                    echo "<p><small class='text-muted'>$image_date</small></p>";
+                                    echo "<p id='image-date'><small class='text-muted'>$image_date</small></p>";
                                     echo '</div>';
 
                                 }
@@ -111,7 +111,7 @@
                         echo '<div class="image-container">';
                         echo "<img src='images/$image_one'>";
                         echo '</div>';
-                        echo "<p><small class='text-muted'>$image_date</small></p>";
+                        echo "<p id='image-date'><small class='text-muted'>$image_date</small></p>";
                         echo '</div>';
 
 

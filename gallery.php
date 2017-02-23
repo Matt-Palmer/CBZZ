@@ -58,7 +58,7 @@
                             echo '<div class="image-container">';
                             echo "<img src='images/$image_one'>";
                             echo '</div>';
-                            echo "<p><small class='text-muted'>$image_date</small></p>";
+                            echo "<p id='image-date'><small class='text-muted'>$image_date</small></p>";
                             echo '</div>';
 
                         }

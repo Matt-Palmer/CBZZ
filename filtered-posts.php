@@ -3,8 +3,8 @@
         <div class="container-fluid">
             <div class="content-width">
                 <div class="jumbotron">
-                    <h1>Company Name</h1>
-                    <p>Welcome to Company Name</p>
+                    <h1>Posts</h1>
+                    <p>View all of my posts here!!</p>
                 </div>
             </div>
         </div>
