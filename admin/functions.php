@@ -1,5 +1,73 @@
 <?php 
 
+function displayAlbums(){
+
+    global $connection;
+
+    $query = "SELECT * FROM album";
+    $select_categories = mysqli_query($connection, $query);
+
+    while($row = mysqli_fetch_assoc($select_categories)){
+        $album_id = $row['album_id'];
+        $album_title = $row['album_title'];
+
+        echo "<tr>";
+        echo "<td><input class='checkboxes' type='checkbox' name='checkboxArray[]' value='{$album_id}'></td>";
+        echo "<td>{$album_id}</td>";          
+        echo "<td>{$album_title}</td>";
+        echo "<td><a href='gallery.php?source=view_albums&delete={$album_id}'>Delete</a></td>";
+        echo "<td><a href='gallery.php?source=view_albums&edit={$album_id}'>Update</a></td>";
+        echo "</tr>";
+    }
+}
+
+function insertAlbum(){
+
+    global $connection;
+
+    if(isset($_POST['submit'])){                                  
+        $album_title = $_POST['album_title'];
+
+        if($album_title == "" || empty($album_title)){
+            echo "You have not entered a title for the category";
+        }else{
+            $query = "INSERT INTO album(album_title) VALUE('{$album_title}') ";
+            $create_category = mysqli_query($connection, $query);
+
+            if(!$create_category){
+                die('Query Failed' . mysqli_error($connection));
+            }
+        }
+    }
+}
+
+function deleteAlbum(){
+
+    global $connection;
+
+    if(isset($_GET['delete'])){
+        $album_id = $_GET['delete'];
+        $query = "DELETE FROM album WHERE album_id = {$album_id}";
+        $delete_query = mysqli_query($connection, $query);
+
+        header("Location: gallery.php?source=view_albums");
+    }
+
+    if(isset($_POST['bulk_options'])){
+        if(isset($_POST['checkboxArray'])){
+            foreach($_POST['checkboxArray'] as $checkboxValue){
+                
+                $query = "DELETE FROM album WHERE album_id = '$checkboxValue'";
+                $delete_query = mysqli_query($connection, $query);
+
+                header("Location: gallery.php?source=view_albums");
+            }
+        }
+    }
+
+    
+}
+
 function displayCategories(){
 
     global $connection;
@@ -82,23 +150,22 @@ function addPost(){
         $post_tags = $_POST['tags'];
         $post_content = $_POST['content'];
         $post_date = date('y-m-d');
-        $date = gmdate("y-m-d h:i:s");
-
-        echo $date;
+        $date = gmdate("y-m-d");
+        $time = gmdate(" h:i:s");
 
         move_uploaded_file($post_image_temp, "../images/$post_image");
 
-        $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status) ";
-        $query .= "VALUES('{$post_category_id}', '{$post_title}', '{$post_author}', '$date', '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_status}')";
+        $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_time, post_image, post_content, post_tags, post_status) ";
+        $query .= "VALUES('{$post_category_id}', '{$post_title}', '{$post_author}', '$date', '$time', '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_status}')";
 
         $create_post_query = mysqli_query($connection, $query);
 
         if(confirmQuery($create_post_query)){
-            echo "<h4 class='bg-danger text-danger' style='padding: 5px'>Post could not be created</h4>";
+            echo "<h4 class='bg-danger' style='padding: 5px'>Post could not be created</h4>";
         }else{
-            echo "<h4 class='bg-success text-success' style='padding: 5px'>Post successfully created</h4>";
+            echo "<h4 class='bg-success' style='padding: 5px'>Post successfully created</h4>";
 
-            header("refresh: 2; URL = posts.php");
+            //header("refresh: 2; URL = posts.php");
         }
     }
 }
@@ -117,10 +184,13 @@ function displayPostData(){
         $post_content = $row['post_content'];
         $post_category_id = $row['post_category_id'];
         $post_date = $row['post_date'];
+        $post_time = $row['post_time'];
         $post_image = $row['post_image'];
         $post_tags = $row['post_tags'];
         $post_status = $row['post_status'];
         $post_comment_count = $row['post_comment_count'];
+
+        $uk_date = date("d-m-y", strtotime($post_date));
 
         echo "<tr>";
         echo "<td><input class='checkboxes' type='checkbox' name='checkboxArray[]' value='{$post_id}'></td>";
@@ -143,7 +213,8 @@ function displayPostData(){
         echo "<td><img src='../images/{$post_image}' width='50px' height='50px'></td>";
         echo "<td>{$post_tags}</td>";
         echo "<td>{$post_comment_count}</td>";
-        echo "<td>{$post_date}</td>";
+        echo "<td>{$uk_date}</td>";
+        echo "<td>{$post_time}</td>";
         echo "<td><a href='../post.php?p_id=$post_id'>View</a></td>";
         echo "<td><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
         echo "<td><a href='posts.php?delete=$post_id'>Delete</a></td>";
@@ -424,17 +495,14 @@ function confirmQuery($query){
     }
 }
 
-
-
-
 function insertGalleryImagesForTemplateTwo(){
-
+   
     if(isset($_POST['submit-images'])){
         
         global $connection;
 
-        $imageOne = $_FILES['image-one']['name'];
-        $imageOne_temp = $_FILES['image-one']['tmp_name'];
+        $imageOne = $_FILES['image1']['name'];
+        $imageOne_temp = $_FILES['image1']['tmp_name'];
 
         $image_tags = $_POST['image_tags'];
         $image_category = $_POST['image_category'];
@@ -451,9 +519,8 @@ function insertGalleryImagesForTemplateTwo(){
         }else{
             echo "failed";
         }
-    }
 
-    
+    }
 
 }
 

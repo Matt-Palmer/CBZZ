@@ -22,10 +22,11 @@
                             $post_title = $row['post_title'];
                             $post_author = $row['post_author'];
                             $post_date = $row['post_date'];
+                            $post_time = $row['post_time'];
                             $post_image = $row['post_image'];
                             $post_content = $row['post_content'];
                             $post_views = $row['post_views'];
-
+                            $uk_date = date("d-m-y", strtotime($post_date));
                 ?>
 
                 <!--Form Validation-->
@@ -60,12 +61,11 @@
                 ?>
 
                 <!-- First Blog Post -->
-                <h2><a href="#"><?php echo $post_title; ?></a></h2>
+                <h2><?php echo $post_title; ?></h2>
                 
                 <p class="lead">By <?php echo $post_author; ?></p>
-                <p><span class="glyphicon glyphicon-time"></span><?php echo ' ' . $post_date; ?></p>
-                <p><span class="fa fa-eye"></span> Views <?php echo $post_views; ?></p>
-
+                <p class="date-and-time"><span class="fa fa-calendar"></span><?php echo ' ' . $uk_date; ?></p>
+                <p class="date-and-time"><span class="fa fa-clock-o"></span><?php echo ' ' . $post_time; ?></p>
                 <hr>
 
                 <div class="image-container">
@@ -147,3 +147,4 @@
             </div>
         </div>
 
+<?php include 'includes/footer.php';?>

@@ -30,7 +30,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="gallery-dropdown">
                                     <a class="dropdown-item fa fa-binoculars" href="gallery.php?source=view_all"> View All Images</a>
-                                
+                                    <a class="dropdown-item fa fa-binoculars" href="gallery.php?source=view_albums"> View Albums</a>
                                     <a class="dropdown-item fa fa-plus" href="gallery.php?source=add_image">    Add Image</a>
                                 </div>
                             </li>

@@ -28,8 +28,8 @@
                                 include 'includes/view_all_images.php';
                                 break;
 
-                                case '23':
-                                echo '';
+                                case 'view_albums':
+                                include 'includes/view_albums.php';
                                 break;
 
                                 case '98':

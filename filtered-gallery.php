@@ -126,7 +126,6 @@
 
                     ?>
 
-                <a id="view-all-posts" href="posts.php" class="btn btn-primary" role="button">View All Posts</a>
             </div>
         </div>
 

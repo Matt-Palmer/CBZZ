@@ -75,9 +75,12 @@
                             $post_title = $row['post_title'];
                             $post_image = $row['post_image'];
                             $post_date = $row['post_date'];
+                            $post_time = $row['post_time'];
                             $post_content = $row['post_content'];
                             $post_author = $row['post_author'];
                             $post_categories = $row['post_category_id'];
+
+                            $uk_date = date("d-m-y", strtotime($post_date));
 
                             $select_category = "SELECT * FROM categories WHERE cat_id = $post_categories";
                             $select_category_query = mysqli_query($connection, $select_category);
@@ -91,15 +94,16 @@
 
                     <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                         <div class="card">
-
-                            <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">
-                            
-                            <div class="card-block">
+                            <a href="post.php?p_id=<?php echo $post_id; ?>">
+                                <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">
+                            </a>
+                            <div class="card-block padding">
 
                                 <h3 class="card-title"><?php echo $post_title; ?></h3>
 
                                 <p class="link"><a href="filtered-posts.php?tag=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></p>
-                                <p class="card-text"><small class="text-muted"><?php echo $post_date; ?></small></p>
+                                <p class="card-text"><small class="text-muted"><?php echo $uk_date; ?></small></p>
+                                <p class="card-text"><small class="text-muted"><?php echo $post_time; ?></small></p>
                                 <p class="card-text"><?php echo $post_content; ?></p> 
                                 <p class="card-text"><?php echo $post_author; ?></p>
                                 
@@ -197,7 +201,6 @@
                             echo '<div class="image-container">';
                             echo "<img src='images/$image_one'>";
                             echo '</div>';
-                            echo "<p id='image-date'><small class='text-muted'>$image_date</small></p>";
                             echo '</div>';
                         
                         ?>
@@ -214,7 +217,7 @@
 
                 </div>
 
-                <a id="view-gallery" href="gallery.php" class="btn btn-primary" role="button">View Gallery</a>
+                <a id="view-gallery" href="gallery.php" class="btn btn-primary" role="button">View All Images</a>
             <!--DISPLAY RECENT IMAGES-->
 
             </div>
