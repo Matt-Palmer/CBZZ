@@ -44,27 +44,36 @@
 
                 <?php
 
-                    $query  = "SELECT * FROM gallery ORDER BY image_date DESC";
+                    $query  = "SELECT * FROM gallery WHERE image_status = 'main' ORDER BY image_date DESC";
                     $get_gallery_query = mysqli_query($connection, $query);
 
-                    echo '<div class="card-columns">';
-                    
-                        while($row = mysqli_fetch_assoc($get_gallery_query)){
+                    echo '<div class="grid">';
+                            while($row = mysqli_fetch_assoc($get_gallery_query)){
 
-                            $image_one = $row['image_one'];
-                            $image_date = $row['image_date'];
+                                $image_one = $row['image_one'];
+                                $image_date = $row['image_date'];
+                                $image_album_id = $row['image_album_id'];
 
-                            echo '<div class="card">';
-                            echo '<div class="image-container">';
-                            echo "<img src='images/$image_one'>";
-                            echo '</div>';
-                            echo "<p id='image-date'><small class='text-muted'>$image_date</small></p>";
-                            echo '</div>';
+                                $select_album_title = "SELECT album_title FROM album WHERE album_id = $image_album_id";
+                                $select_album_title_query = mysqli_query($connection, $select_album_title);
 
-                        }
+                                $albumRow = mysqli_fetch_assoc($select_album_title_query);
+                                $album_title = $albumRow['album_title'];
 
-                    echo '</div>';   
-                                    
+                                echo '<div class="item">';
+                                    echo '<div class="item-content">';
+                                        echo "<img src='images/$image_one'>";
+                                        
+                                        echo '<div class="overlay">';
+                                            
+                                        echo '</div>';
+                                        echo "<p class='overlay-text'>$album_title</p>";
+                                    echo '</div>';
+                                echo '</div>';
+
+                            }
+                    echo '</div>';
+
                 ?>
             </div>
         </div>

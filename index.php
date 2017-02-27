@@ -134,7 +134,7 @@
 
 
             <!--RECENT IMAGES--> 
-                <h3 id="recent-images-heading">Recently added to the gallery</h3>
+                <h3 id="recent-images-heading">Recently updated albums</h3>
 
                 <hr>
             <!--IMAGES FILTER-->
@@ -202,13 +202,13 @@
 
                             $image_one = $row['image_one'];
                             $image_date = $row['image_date'];
-
-                            echo '<div class="card">';
+                            
+                            echo "<a href='album.php?album=$image_album_id' class='card'>";
                             echo '<div class="image-container">';
                             echo "<img src='images/$image_one'>";
                             echo '</div>';
-                            echo "<p>$album_title</p>";
-                            echo '</div>';
+                            echo "<p class='album-title'>$album_title</p>";
+                            echo '</a>';
                         
                         ?>
 

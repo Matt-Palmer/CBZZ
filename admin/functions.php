@@ -516,8 +516,19 @@ function insertGalleryImagesForTemplateTwo(){
         $query = "INSERT INTO gallery(image_album_id, image_status, image_category, image_tags, image_date, image_one) ";
         $query .= "VALUES('$image_album_id', '$image_status', '$image_category', '$image_tags', '$date', '{$imageOne}')";
 
+        
+
         if($insert_image_query = mysqli_query($connection, $query)){
-            echo "success";
+
+            $update_query = "UPDATE gallery SET image_date = '$date' WHERE image_album_id = $image_album_id";
+            
+            if($update_date_query = mysqli_query($connection, $update_query)){
+                echo "success";
+            }else{
+                echo "date query failed";
+            }
+
+            
         }else{
             echo "failed";
         }
