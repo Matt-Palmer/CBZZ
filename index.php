@@ -178,7 +178,7 @@
 
                     <?php
 
-                        $select_recent_images = "SELECT * FROM gallery ORDER BY image_date DESC LIMIT 8";
+                        $select_recent_images = "SELECT * FROM gallery WHERE image_status = 'main' ORDER BY image_date DESC LIMIT 8";
                         $select_recent_images_query = mysqli_query($connection, $select_recent_images);
 
                         $post_count = 0;
@@ -187,7 +187,13 @@
                         while($row = mysqli_fetch_assoc($select_recent_images_query)){
 
                             $image_id = $row['image_id'];
+                            $image_album_id = $row['image_album_id'];
 
+                            $select_album_title = "SELECT album_title FROM album WHERE album_id = $image_album_id";
+                            $select_album_title_query = mysqli_query($connection, $select_album_title);
+
+                            $albumRow = mysqli_fetch_assoc($select_album_title_query);
+                            $album_title = $albumRow['album_title'];
                     ?>
 
                     <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
@@ -201,6 +207,7 @@
                             echo '<div class="image-container">';
                             echo "<img src='images/$image_one'>";
                             echo '</div>';
+                            echo "<p>$album_title</p>";
                             echo '</div>';
                         
                         ?>

@@ -506,13 +506,15 @@ function insertGalleryImagesForTemplateTwo(){
 
         $image_tags = $_POST['image_tags'];
         $image_category = $_POST['image_category'];
+        $image_album_id = $_POST['image_album_id'];
+        $image_status = $_POST['image_status'];
 
         move_uploaded_file($imageOne_temp, "../images/$imageOne");
 
         $date = gmdate("y-m-d h:i:s");
 
-        $query = "INSERT INTO gallery(image_category, image_tags, image_date, image_one) ";
-        $query .= "VALUES('$image_category', '$image_tags', '$date', '{$imageOne}')";
+        $query = "INSERT INTO gallery(image_album_id, image_status, image_category, image_tags, image_date, image_one) ";
+        $query .= "VALUES('$image_album_id', '$image_status', '$image_category', '$image_tags', '$date', '{$imageOne}')";
 
         if($insert_image_query = mysqli_query($connection, $query)){
             echo "success";

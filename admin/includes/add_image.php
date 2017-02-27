@@ -14,7 +14,7 @@
 
         <div class="form-group col-sm-12">
             <label for="title">Album</label>
-            <select class="form-control" name="image_category" id="category-filter">
+            <select class="form-control" name="image_album_id" id="album">
                 <option value="0">Undefined</option>
                 <?php 
                     $edit_query = "SELECT * FROM album";
@@ -32,8 +32,11 @@
         </div>
 
         <div class="form-group col-sm-12">
-            <label for="title">Album Cover: </label>
-            <input class='checkboxes' type='checkbox' name='default' value='default'>
+            <label for="title">Image State</label>
+            <select class="form-control" name="image_status" id="image_status">
+                <option value="default">Default</option>
+                <option value="main">Main</option>
+            </select>
         </div>
 
         
