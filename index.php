@@ -1,19 +1,16 @@
 <?php include 'includes/header.php'; ?>
     <!--JUMBOTRON-->
-        <div class="container-fluid">
-            <div class="content-width">
+    <div class="container-fluid">
+        <div class="content-width">
                 <div class="jumbotron">
                     <h1>Company Name</h1>
                     <p>Welcome to Company Name</p>
                 </div>
-            </div>
-        </div>
+            
     <!--JUMBOTRON-->
 
         
     <!--MAIN CONTENT-->
-        <div class="container-fluid">
-            <div class="content-width">
 
             <!--RECENT POSTS-->
                 <h3>Recent Posts</h3>

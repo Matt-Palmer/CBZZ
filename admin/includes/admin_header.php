@@ -33,10 +33,6 @@
 
     <link href="css/new-style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/croppie.css" />
-
-    <link rel="stylesheet" href="css/iEdit.css">
-
 
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

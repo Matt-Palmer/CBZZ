@@ -1,7 +1,11 @@
 <?php
 
 
-$db = ['db_host' => 'localhost', 'db_user' => 'root', 'db_pass' => '', 'db_name' => 'cakes'];
+//$db = ['db_host' => 'localhost', 'db_user' => 'root', 'db_pass' => '', 'db_name' => 'cakes'];
+
+
+//000Webhost
+$db = ['db_host' => 'localhost', 'db_user' => 'id428867_mattyp_88', 'db_pass' => 'Newcastle1?', 'db_name' => 'id428867_cakes'];
 
 
 foreach($db as $key => $value){

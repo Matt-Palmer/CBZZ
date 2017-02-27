@@ -1,4 +1,4 @@
-tinymce.init({
+/*tinymce.init({
   selector: "textarea",
   height: 400,
   plugins: [
@@ -15,7 +15,7 @@ tinymce.init({
   toolbar_items_size: 'small',
 
   
-});
+});*/
 
 $(document).ready(function(){
     $('#select-all').click(function(event){

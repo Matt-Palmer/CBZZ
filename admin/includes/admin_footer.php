@@ -9,8 +9,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <script src="js/croppie.js"></script>
-    <script src="js/iEdit.js"></script>
 
 </body>
 

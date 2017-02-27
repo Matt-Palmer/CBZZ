@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+
+
 .grid{
     position: relative;
 
@@ -13,18 +15,44 @@
         z-index: 1;
         border-radius: 8px;
 
+        .overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: #0275d8;
+            border-radius: 8px;
+            transition: .5s ease;
+        }
+
+        .overlay-text{
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 1s ease;
+        }
+
         &:hover{
             cursor: pointer;
             .overlay{
-                
-                opacity: 0;
+                left: 0;
+                opacity: 0.5;
 
                 
             }
 
             .overlay-text{
-                opacity: 0;
+                opacity: 1;
             }
+            
         }
 
         
@@ -44,34 +72,7 @@
         width: 100%;
         border-radius: 8px;
     }
-
-    .overlay{
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.75;
-        background-color: #0275d8;
-        border-radius: 8px;
-        transition: .5s ease;
- 
-    }
-
     
-
-    .overlay-text{
-        color: white;
-        font-size: 30px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        transition: .5s ease;
-    }
 }
 
 .lead{
@@ -326,7 +327,7 @@
 }
 
 
-@media only screen and (min-width: 768px) {
+@media (max-width: 768px) {
     #form-container{
         .form-inline{
             #search{
