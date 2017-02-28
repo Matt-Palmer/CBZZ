@@ -1,8 +1,171 @@
 *{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
+h3{
+    padding-left: 7px;
+}
 
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+// (1) CONTAINERS
+.container-fluid{
+    padding: 0;
+}
+
+.content-width{
+    position: relative;
+}
+
+.content-width,
+.container{
+    width: 100%;
+    padding: 0 5px;
+}
+// (1) CONTAINERS
+
+
+// (2) NAVIGATION
+.navbar{
+    border-radius: 0;
+    margin-bottom: 32px;
+    padding: 8px 5px;
+}
+
+.navbar-toggler{
+    margin-right: -10px;
+}
+// (2) NAVIGATION
+
+// (3) JUMBOTRON
+.jumbotron{
+
+    padding: 2rem 10px;
+
+    h1{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+}
+// (3) JUMBOTRON
+
+// (4) RECENT POSTS/RECENT IMAGES
+#form-container{
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 32px;
+    
+    h6, h4{
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .form-inline{
+        width: 100%;
+        background-color: #f7f7f7;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 8px;
+
+        #reset{
+            width: 100%;
+            color: #0275d8;
+            margin-bottom: 10px;
+        }
+      
+        #apply-filter,
+        #re-apply-filter{
+            width: 100%;
+            margin: 10px 0;
+        }
+            
+        #search{
+            margin-bottom: 10px;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.card-deck{  
+    width: 100%;
+
+    .padding-right-left{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .card{
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        text-decoration: none;
+        color: black;
+
+        .card-block{
+            padding: 5px 0 0;
+        }
+
+        .image-container{   
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .text-muted{
+            padding: 0px;
+        }
+
+        .read-more{
+            width: 100%;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        h3{
+            font-size: 24px;
+            padding-left: 0;
+        }
+
+        .date-and-time{
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .card-title{
+            padding-top: 6px;
+            margin-bottom: 6px;
+        }
+
+        .album-title{
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            background-color: #0275d8;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+        }
+    }
+}
+// (4) RECENT POSTS/RECENT IMAGES
 
 .grid{
     position: relative;
@@ -55,6 +218,18 @@
             
         }
 
+        .album-title{
+            position: absolute;
+            width: 150px;
+            height: 20px;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            background-color: #0275d8;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+        }
         
     }
 
@@ -79,29 +254,8 @@
     font-size: 16px;
 }
 
-.navbar{
-    border-radius: 0;
-    margin-bottom: 32px;
-    padding: 8px 0;
-}
 
-.navbar-toggler{
-    margin-right: -10px;
-}
 
-.container-fluid{
-    padding: 0;
-}
-
-.content-width{
-    position: relative;
-}
-
-.content-width,
-.container{
-    width: 70%;
-    margin: 0 auto;
-}
 
 .placeholder-img{
     width: 100%;
@@ -116,7 +270,7 @@
 
 #view-gallery,
 #view-all-posts{
-    margin: 15px 0;
+    margin: 16px 0;
     width: 100%;
 }
 
@@ -124,69 +278,12 @@
     display: inline;
 }
 
-#form-container{
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 32px;
-    
-    h6, h4{
-        display: block;
-        width: 100%;
-        margin-top: 17px;
-    }
-
-    .form-inline{
-        width: 100%;
-        background-color: #f7f7f7;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-radius: 8px;
-
-        #reset{
-            width: 100%;
-            color: #0275d8;
-            margin-bottom: 10px;
-        }
-      
-        #apply-filter,
-        #re-apply-filter{
-            width: 100%;
-            margin: 10px 0;
-        }
-            
-        #search{
-            margin-bottom: 10px;
-            padding-right: 0;
-            padding-left: 0;
-        }
-    }
-}
 
 #recent-images-heading{
     margin-top: 15px;
 }
 
-.card-deck{
-    .card{
-        position: relative;
-        display: block;
-        margin-bottom: 20px;
-        padding: 5px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        text-decoration: none;
-        color: black;
-        .read-more{
-            width: 100%;
-        }
 
-        
-    }
-
-    img{
-        width: 100%;
-    }
-}
 
 .alt-btn{
     border-color: #337ab7;
@@ -209,46 +306,7 @@
     margin-right: 0;
 }
 
-.card-deck{  
-    width: 100%;
-    
-    .card{
-        margin-bottom: 5px;
 
-        .padding{
-            padding: 5px 0 0;
-        }
-
-        .image-container{   
-            .inner-container{
-                padding: 5px;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .image{
-                width: 50%;
-                height: 50%;
-                background-color: lightgray;
-            }
-
-            img{
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        #image-date{
-            margin-left: 5px;
-        }
-
-        .text-muted{
-            padding: 0px;
-        }
-    }
-}
 
 
 
@@ -262,6 +320,7 @@
 
     .card{
         padding: 5px;
+        margin-top: 5px;
         img{
             max-width: 100%;
         }
@@ -327,7 +386,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media only screen and (min-width: 768px) {
     #form-container{
         .form-inline{
             #search{

@@ -42,39 +42,55 @@
                     </form>
                 </div>
 
-                <?php
+                <div class="row">
 
-                    $query  = "SELECT * FROM gallery WHERE image_status = 'main' ORDER BY image_date DESC";
-                    $get_gallery_query = mysqli_query($connection, $query);
+                    <?php
 
-                    echo '<div class="grid">';
-                            while($row = mysqli_fetch_assoc($get_gallery_query)){
+                        $select_recent_images = "SELECT * FROM gallery WHERE image_status = 'main' ORDER BY image_date DESC";
+                        $select_recent_images_query = mysqli_query($connection, $select_recent_images);
 
-                                $image_one = $row['image_one'];
-                                $image_date = $row['image_date'];
-                                $image_album_id = $row['image_album_id'];
+                        $post_count = 0;
+                        
+                        echo "<div class='card-deck'>";
+                        while($row = mysqli_fetch_assoc($select_recent_images_query)){
 
-                                $select_album_title = "SELECT album_title FROM album WHERE album_id = $image_album_id";
-                                $select_album_title_query = mysqli_query($connection, $select_album_title);
+                            $image_id = $row['image_id'];
+                            $image_album_id = $row['image_album_id'];
 
-                                $albumRow = mysqli_fetch_assoc($select_album_title_query);
-                                $album_title = $albumRow['album_title'];
+                            $select_album_title = "SELECT album_title FROM album WHERE album_id = $image_album_id";
+                            $select_album_title_query = mysqli_query($connection, $select_album_title);
 
-                                echo '<div class="item">';
-                                    echo '<div class="item-content">';
-                                        echo "<img src='images/$image_one'>";
-                                        
-                                        echo '<div class="overlay">';
-                                            
-                                        echo '</div>';
-                                        echo "<p class='overlay-text'>$album_title</p>";
-                                    echo '</div>';
-                                echo '</div>';
+                            $albumRow = mysqli_fetch_assoc($select_album_title_query);
+                            $album_title = $albumRow['album_title'];
+                    ?>
 
-                            }
-                    echo '</div>';
+                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 padding-right-left">
+                    
+                        <?php 
 
-                ?>
+                            $image_one = $row['image_one'];
+                            $image_date = $row['image_date'];
+                            
+                            echo "<a href='album.php?album=$image_album_id' class='card'>";
+                            echo '<div class="image-container">';
+                            echo "<img src='images/$image_one'>";
+                            echo '</div>';
+                            echo "<p class='album-title'>$album_title</p>";
+                            echo '</a>';
+                        
+                        ?>
+
+                    </div>
+                        
+                    <?php     
+
+                        }
+
+                        echo "</div>";
+
+                    ?>
+
+                </div>
             </div>
         </div>
 

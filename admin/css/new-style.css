@@ -144,6 +144,12 @@
       .card .image-container .third:nth-child(even) {
         background-color: lightgray; }
 
+.chart {
+  height: 300px; }
+
+.second_graph_padding_top {
+  padding-top: 16px; }
+
 @media only screen and (min-width: 768px) {
   .view-images-form,
   .view-posts-form,
@@ -196,3 +202,6 @@
 
   #add-image-form .form-control {
     width: 405px; } }
+@media only screen and (min-width: 992px) {
+  .second_graph_padding_top {
+    padding-top: 0; } }

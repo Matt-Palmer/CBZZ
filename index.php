@@ -89,20 +89,20 @@
 
                     ?>
 
-                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 padding-right-left">
                         <div class="card">
                             <a href="post.php?p_id=<?php echo $post_id; ?>">
                                 <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">
                             </a>
-                            <div class="card-block padding">
+                            <div class="card-block">
 
                                 <h3 class="card-title"><?php echo $post_title; ?></h3>
-
-                                <p class="link"><a href="filtered-posts.php?tag=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></p>
-                                <p class="card-text"><small class="text-muted"><?php echo $uk_date; ?></small></p>
-                                <p class="card-text"><small class="text-muted"><?php echo $post_time; ?></small></p>
+                                <p class="card-text"><?php echo 'By ' . $post_author; ?></p>
+                                
+                                <p class="date-and-time"><small class="fa fa-calendar"><?php echo ' ' . $uk_date; ?></small></p>
+                                <p class="date-and-time"><small class="fa fa-clock-o"><?php echo ' ' . $post_time; ?></small></p>
                                 <p class="card-text"><?php echo $post_content; ?></p> 
-                                <p class="card-text"><?php echo $post_author; ?></p>
+                                <p class="link"><a href="filtered-posts.php?tag=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></p>
                                 
                                 <a href="post.php?p_id=<?php echo $post_id; ?>" class="btn btn-primary read-more" role="button">Read More</a>
 
@@ -193,7 +193,7 @@
                             $album_title = $albumRow['album_title'];
                     ?>
 
-                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 padding-right-left">
                     
                         <?php 
 

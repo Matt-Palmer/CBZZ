@@ -27,11 +27,12 @@ function insertAlbum(){
 
     if(isset($_POST['submit'])){                                  
         $album_title = $_POST['album_title'];
+        $album_category = $_POST['album_category'];
 
         if($album_title == "" || empty($album_title)){
             echo "You have not entered a title for the category";
         }else{
-            $query = "INSERT INTO album(album_title) VALUE('{$album_title}') ";
+            $query = "INSERT INTO album(album_title, album_category_id) VALUE('{$album_title}', '{$album_category}') ";
             $create_category = mysqli_query($connection, $query);
 
             if(!$create_category){
@@ -505,16 +506,15 @@ function insertGalleryImagesForTemplateTwo(){
         $imageOne_temp = $_FILES['image1']['tmp_name'];
 
         $image_tags = $_POST['image_tags'];
-        $image_category = $_POST['image_category'];
         $image_album_id = $_POST['image_album_id'];
         $image_status = $_POST['image_status'];
 
         move_uploaded_file($imageOne_temp, "../images/$imageOne");
 
-        $date = gmdate("y-m-d h:i:s");
+        $date = gmdate("y-m-d");
 
-        $query = "INSERT INTO gallery(image_album_id, image_status, image_category, image_tags, image_date, image_one) ";
-        $query .= "VALUES('$image_album_id', '$image_status', '$image_category', '$image_tags', '$date', '{$imageOne}')";
+        $query = "INSERT INTO gallery(image_album_id, image_status, image_tags, image_added, image_date, image_one) ";
+        $query .= "VALUES('$image_album_id', '$image_status', '$image_tags', '$date', '$date', '{$imageOne}')";
 
         
 

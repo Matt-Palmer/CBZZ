@@ -189,6 +189,13 @@
     }
 }
 
+.chart{
+    height: 300px;
+}
+
+.second_graph_padding_top{
+    padding-top: 16px;
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -244,6 +251,9 @@
 
 @media only screen and (min-width: 992px) {
 
+    .second_graph_padding_top{
+        padding-top: 0;
+    }
     
 }
 

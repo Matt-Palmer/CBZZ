@@ -107,7 +107,7 @@
                 </form>
                 
 
-                <hr>
+                
 
                 <!-- Posted Comments -->
 
@@ -128,6 +128,7 @@
 
                 ?>
 
+                <hr>
 
                 <!-- Comment -->
                 <div class="media">
