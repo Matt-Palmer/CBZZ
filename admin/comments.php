@@ -45,7 +45,7 @@
 
 
                             
-
+                    <div class="table-container">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -73,6 +73,7 @@
 
                             </tbody>
                         </table>
+                    </div>
                         
                         </form>
                     </div>

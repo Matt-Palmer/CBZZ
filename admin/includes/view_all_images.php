@@ -65,7 +65,7 @@ if(isset($_POST['checkboxArray'])){
     </div>
 
 
-    <div>
+    <div class="table-container">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>

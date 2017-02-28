@@ -511,7 +511,7 @@ function insertGalleryImagesForTemplateTwo(){
 
         move_uploaded_file($imageOne_temp, "../images/$imageOne");
 
-        $date = gmdate("y-m-d");
+        $date = gmdate("y-m-d h:i:s");
 
         $query = "INSERT INTO gallery(image_album_id, image_status, image_tags, image_added, image_date, image_one) ";
         $query .= "VALUES('$image_album_id', '$image_status', '$image_tags', '$date', '$date', '{$imageOne}')";
