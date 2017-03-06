@@ -520,7 +520,9 @@ function insertGalleryImagesForTemplateTwo(){
 
         if($insert_image_query = mysqli_query($connection, $query)){
 
-            $update_query = "UPDATE gallery SET image_date = '$date' WHERE image_album_id = $image_album_id";
+            //$update_query = "UPDATE gallery SET image_date = '$date' WHERE image_album_id = $image_album_id";
+
+            $update_query = "UPDATE album SET album_updated = '$date' WHERE album_id = $image_album_id";
             
             if($update_date_query = mysqli_query($connection, $update_query)){
                 echo "success";

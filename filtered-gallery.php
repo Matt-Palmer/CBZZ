@@ -50,14 +50,14 @@
 
                             $category = $_GET['category'];
 
-                            $query = "SELECT album_id FROM album WHERE album_category_id = $category";
+                            $query = "SELECT album_id FROM album WHERE album_category_id = $category ORDER BY album_updated DESC";
                             $get_album_query = mysqli_query($connection, $query);
                             echo "<div class='card-deck'>";
                             while($get_album = mysqli_fetch_assoc($get_album_query)){
                                 
                                 $album_id = $get_album['album_id'];
 
-                                $gallery_query = "SELECT * FROM gallery WHERE image_status = 'main' AND image_album_id = '$album_id' ORDER BY image_date DESC";
+                                $gallery_query = "SELECT * FROM gallery WHERE image_status = 'main' AND image_album_id = $album_id";
                                 $get_gallery_query = mysqli_query($connection, $gallery_query);
 
                                 if($get_gallery_query){

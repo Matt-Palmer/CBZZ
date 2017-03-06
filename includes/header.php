@@ -6,7 +6,8 @@
         <title>Cakes By Zo Zo</title>
 
         <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
-
+    
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
